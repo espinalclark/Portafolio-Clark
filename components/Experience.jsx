@@ -9,11 +9,11 @@ const experiences = [
       "Participé como Backend Junior apoyando en el desarrollo y soporte de aplicaciones web, realizando pruebas básicas de APIs y análisis inicial de seguridad.",
   },
   {
-    period: "2024 - 2025",
+    period: "2024 - Actualidad",
     title: "Estudiante de Ciberseguridad",
-    company: "Formacion Autodidacta & Cursos",
+    company: "SENATI",
     description:
-      "Completado certificaciones en seguridad informatica. Practicas en laboratorios de hacking etico como TryHackMe y HackTheBox. Estudio continuo de metodologias OWASP.",
+      "Estudio Ingeniería en Ciberseguridad en SENATI, especializándome progresivamente en pentesting y seguridad ofensiva.",
   },
   {
     period: "2023 - 2024",
