@@ -26,7 +26,7 @@ export default function Hero() {
           Descargar mi CV
         </a>
         <a
-          href="#"
+          href="https://linkedin.com/in/espinalclark/"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-md border border-primary px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
@@ -35,7 +35,7 @@ export default function Hero() {
           LinkedIn
         </a>
         <a
-          href="#"
+          href="https://github.com/espinalclark"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-md border border-primary px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
