@@ -25,8 +25,9 @@ export default function About() {
               Seguridad Ofensiva
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Pruebas de penetracion en aplicaciones web, redes y sistemas para
-              identificar y explotar vulnerabilidades.
+             Desarrollo de habilidades en pentesting mediante laboratorios prácticos,
+             análisis de vulnerabilidades y uso de herramientas de seguridad ofensiva
+             en entornos controlados.
             </p>
           </div>
           <div className="rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary/50">
