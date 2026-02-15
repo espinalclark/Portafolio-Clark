@@ -15,8 +15,7 @@ export default function About() {
           Soy Clark Espinal, un Pentester Junior apasionado por la ciberseguridad
           y el hacking etico. Me especializo en pruebas de penetracion, analisis
           de vulnerabilidades y seguridad ofensiva. Siempre en busca de nuevos
-          retos y oportunidades para fortalecer la seguridad de los sistemas
-          digitales.
+          retos y oportunidades para mejorar mis habilidades.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
