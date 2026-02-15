@@ -46,8 +46,8 @@ export default function About() {
               Scripting & Automatizacion
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Desarrollo de scripts y herramientas personalizadas para automatizar
-              tareas de seguridad y pentesting.
+              Desarrollo de scripts básicos para automatizar tareas de análisis y
+              aprendizaje en seguridad ofensiva y pentesting.
             </p>
           </div>
         </div>
