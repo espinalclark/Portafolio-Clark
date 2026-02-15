@@ -2,11 +2,11 @@
 
 const experiences = [
   {
-    period: "2025 - Presente",
-    title: "Pentester Junior",
-    company: "Freelance / Bug Bounty",
+    period: "23/09/2025 - 15/12/2025",
+    title: "Programador Junior",
+    company: "Vaftec Peru",
     description:
-      "Realizacion de pruebas de penetracion en aplicaciones web. Participacion en programas de bug bounty. Reporte de vulnerabilidades criticas en plataformas reconocidas.",
+      "Participé como Backend Junior apoyando en el desarrollo y soporte de aplicaciones web, realizando pruebas básicas de APIs y análisis inicial de seguridad.",
   },
   {
     period: "2024 - 2025",
