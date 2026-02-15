@@ -22,7 +22,7 @@ export default function About() {
           <div className="rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary/50">
             <Shield className="text-primary mb-4" size={32} />
             <h3 className="text-foreground font-semibold text-lg mb-2">
-              Seguridad Ofensiva
+              Seguridad Ofensiva Junior
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
              Desarrollo de habilidades en pentesting mediante laboratorios prácticos,
