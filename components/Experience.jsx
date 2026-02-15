@@ -16,11 +16,11 @@ const experiences = [
       "Estudio Ingeniería en Ciberseguridad en SENATI, especializándome progresivamente en pentesting y seguridad ofensiva.",
   },
   {
-    period: "2023 - 2024",
-    title: "Soporte IT / Redes",
-    company: "Experiencia Inicial",
+    period: "Actualidad",
+    title: "Certificado eJPT",
+    company: "INE",
     description:
-      "Configuracion y administracion de redes. Asistencia tecnica y resolucion de incidentes. Primeros pasos en seguridad de infraestructura.",
+      "Me encuentro preparándome activamente para la certificación eJPT, practicando constantemente pentesting en laboratorios y entornos controlados para fortalecer habilidades en seguridad ofensiva.",
   },
 ]
 
