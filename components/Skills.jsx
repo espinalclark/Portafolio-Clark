@@ -4,6 +4,17 @@ import Image from "next/image"
 
 const skillCategories = [
   {
+    title: "Conocimientos",
+    skills: [
+      { name: "TCP/IP", icon: "/assets/icons/network-logo.svg" },
+      { name: "OWASP Top 10", icon: "/assets/icons/owasp-logo.svg" },
+      { name: "Linux Fundamentals", icon: "/assets/icons/linux-logo.svg" },
+      { name: "Active Directory Basics", icon: "/assets/icons/ad-logo.svg" },
+      { name: "ISO 27001 Basics", icon: "/assets/icons/iso27001-logo.svg" },
+      { name: "Web Application Security", icon: "/assets/icons/websec-logo.svg" },
+    ],
+  },
+  {
     title: "Herramientas",
     skills: [
       { name: "Burp Suite", icon: "/assets/icons/burpsuite-logo.svg" },
@@ -24,16 +35,6 @@ const skillCategories = [
       { name: "Python", icon: "/assets/icons/python-logo.svg" },
       { name: "Bash", icon: "/assets/icons/bash-logo.svg" },
       { name: "PowerShell", icon: "/assets/icons/powershell-logo.svg" },
-    ],
-  },
-  {
-    title: "Conocimientos",
-    skills: [
-      { name: "TCP/IP", icon: "/assets/icons/tcpdump-logo.svg" },
-      { name: "Enum4linux", icon: "/assets/icons/enum4linux-logo.svg" },
-      { name: "Responder", icon: "/assets/icons/responder-logo.svg" },
-      { name: "Masscan", icon: "/assets/icons/masscan-logo.svg" },
-      { name: "Medusa", icon: "/assets/icons/medusa-logo.svg" },
     ],
   },
 ]
