@@ -36,8 +36,8 @@ export default function About() {
               Analisis de Vulnerabilidades
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Evaluacion exhaustiva de sistemas para detectar debilidades de
-              seguridad antes de que sean explotadas.
+              Análisis inicial de seguridad en sistemas y aplicaciones mediante técnicas
+              de enumeración y detección de vulnerabilidades en entornos controlados.
             </p>
           </div>
           <div className="rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary/50">
