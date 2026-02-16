@@ -19,7 +19,7 @@ export default function Hero() {
 
       <div className="relative mt-12 flex flex-wrap items-center justify-center gap-4">
         <a
-          href="#"
+          href="/assets/cv/CV_CLARK.pdf"
           className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
         >
           <Download size={18} />
