@@ -5,13 +5,13 @@ import Image from "next/image"
 const skillCategories = [
   {
     title: "Conocimientos",
-    skills: [
-      { name: "TCP/IP", icon: "/assets/icons/network-logo.svg" },
-      { name: "OWASP Top 10", icon: "/assets/icons/owasp-logo.svg" },
-      { name: "Linux Fundamentals", icon: "/assets/icons/linux-logo.svg" },
-      { name: "Active Directory Basics", icon: "/assets/icons/ad-logo.svg" },
-      { name: "ISO 27001 Basics", icon: "/assets/icons/iso27001-logo.svg" },
-      { name: "Web Application Security", icon: "/assets/icons/websec-logo.svg" },
+    list: [
+      "Conocimiento en redes TCP/IP",
+      "OWASP Top 10",
+      "Linux Fundamentals",
+      "Active Directory (nivel básico)",
+      "ISO 27001 (conceptos básicos)",
+      "Seguridad en Aplicaciones Web",
     ],
   },
   {
@@ -43,6 +43,8 @@ export default function Skills() {
   return (
     <section id="habilidades" className="py-24 px-6">
       <div className="mx-auto max-w-5xl">
+
+        {/* Title */}
         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">
           Habilidades
         </h2>
@@ -50,19 +52,34 @@ export default function Skills() {
         <div className="h-1 w-16 bg-primary rounded mb-12" />
 
         <div className="grid md:grid-cols-3 gap-10">
+
           {skillCategories.map((category, i) => (
             <div key={i}>
               <h3 className="text-lg font-bold mb-6 text-foreground">
                 {category.title}
               </h3>
 
-              <div className="grid grid-cols-3 gap-6">
-                {category.skills.map((skill) => (
-                  <div
-                    key={skill.name}
-                    className="flex flex-col items-center gap-2 group"
-                  >
-                    <div className="p-3 rounded-xl bg-secondary/40 hover:bg-primary/10 transition-all duration-300">
+              {/* ===== CONOCIMIENTOS (LISTA) ===== */}
+              {category.list && (
+                <ul className="space-y-3 text-sm text-muted-foreground">
+                  {category.list.map((item) => (
+                    <li key={item} className="flex gap-2 items-start">
+                      <span className="text-primary mt-[2px]">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {/* ===== SKILLS CON ICONOS ===== */}
+              {category.skills && (
+                <div className="grid grid-cols-3 gap-6">
+                  {category.skills.map((skill) => (
+                    <div
+                      key={skill.name}
+                      className="flex flex-col items-center gap-2 group"
+                    >
+                      {/* Icon SIN cuadro */}
                       <Image
                         src={skill.icon}
                         alt={skill.name}
@@ -70,14 +87,15 @@ export default function Skills() {
                         height={40}
                         className="transition-transform duration-300 group-hover:scale-110"
                       />
-                    </div>
 
-                    <span className="text-xs text-muted-foreground text-center">
-                      {skill.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
+                      <span className="text-xs text-muted-foreground text-center">
+                        {skill.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
             </div>
           ))}
         </div>
