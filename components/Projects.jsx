@@ -8,7 +8,7 @@ const projects = [
     title: "Backdoor Control Panel",
     tech: "Python · Linux · Networking",
     description:
-      "Desarrollo de una herramienta de control remoto enfocada en pruebas de seguridad y aprendizaje de técnicas ofensivas en entornos controlados.",
+      "Herramienta desarrollada para pruebas de seguridad en entornos controlados, enfocada en aprendizaje de técnicas ofensivas y control remoto.",
     tags: ["Python", "Security", "Linux"],
     github: "#",
     link: "#",
@@ -18,7 +18,7 @@ const projects = [
     title: "Personalización Arch Linux + Hyprland",
     tech: "Arch Linux · Hyprland · Waybar · Kitty",
     description:
-      "Configuración completa de entorno Linux minimalista con Hyprland, optimizando productividad y flujo de trabajo para ciberseguridad.",
+      "Configuración completa de entorno Linux minimalista optimizado para productividad y flujo de trabajo en ciberseguridad.",
     tags: ["ArchLinux", "Hyprland", "Waybar"],
     github: "#",
     link: "#",
@@ -50,15 +50,30 @@ export default function Projects() {
           {projects.map((project, i) => (
             <div
               key={i}
-              className="group bg-card border border-border rounded-xl overflow-hidden
-              transition-all duration-300 hover:-translate-y-2 hover:border-primary/40"
+              className="
+                group
+                bg-card
+                border border-border
+                rounded-xl
+                overflow-hidden
+                transition-all duration-300
+                hover:-translate-y-2
+                hover:border-primary/40
+              "
             >
               {/* Imagen */}
-              <div className="relative overflow-hidden">
+              <div className="relative bg-muted flex items-center justify-center h-44 overflow-hidden">
+
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="
+                    max-h-full
+                    max-w-full
+                    object-contain
+                    transition-transform duration-500
+                    group-hover:scale-105
+                  "
                 />
 
                 {/* Tags flotantes */}
@@ -76,6 +91,7 @@ export default function Projects() {
 
               {/* Content */}
               <div className="p-5 flex flex-col h-[220px]">
+
                 <h3 className="text-foreground font-semibold text-lg mb-2">
                   {project.title}
                 </h3>
@@ -90,20 +106,30 @@ export default function Projects() {
 
                 {/* Footer */}
                 <div className="flex items-center justify-between mt-4">
+
+                  {/* Github */}
                   <a
                     href={project.github}
-                    className="w-9 h-9 flex items-center justify-center rounded-full
-                    bg-muted hover:bg-primary/20 transition"
+                    className="
+                      w-9 h-9
+                      flex items-center justify-center
+                      rounded-full
+                      bg-muted
+                      hover:bg-primary/20
+                      transition
+                    "
                   >
                     <Github size={16} className="text-foreground" />
                   </a>
 
+                  {/* Link */}
                   <a
                     href={project.link}
                     className="text-primary text-sm font-medium hover:underline"
                   >
                     Link
                   </a>
+
                 </div>
               </div>
             </div>
