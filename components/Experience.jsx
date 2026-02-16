@@ -5,7 +5,7 @@ const experiences = [
     title: "Empresa VafTec Peru",
     duration: "4 meses",
     date: "23/09/2025 - 15/12/2025",
-    role: "Programar Backend jr",
+    role: "Programador Backend jr",
   },
   {
     title: "Ingenieria de Ciberseguridad",
@@ -16,7 +16,7 @@ const experiences = [
   {
     title: "Certifiacion eJPT",
     duration: "Actualdiad",
-    date: "Actualidad",
+    date: "2026",
     role: "Estudiante",
   },
 
