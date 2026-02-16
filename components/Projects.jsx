@@ -11,14 +11,14 @@ const projects = [
       "Herramienta desarrollada para pruebas de seguridad en entornos controlados, enfocada en aprendizaje de técnicas ofensivas y control remoto.",
     tags: ["PowerShell", "Security", "Windows"],
     github: "https://github.com/espinalclark",
-    link: "https://github.com/espinalclark/Scripting/tree/main/Backdoors",
+    link: "https://github.com/espinalclark/Scripting/blob/main/Backdoors/backdoor.ps1",
   },
   {
     image: "/assets/images/hyprland.jpeg",
     title: "Personalización Arch Linux + Hyprland",
     tech: "Arch Linux · Hyprland · Waybar ",
     description:
-      "Configuración completa de entorno Linux minimalista optimizado para productividad y flujo de trabajo en ciberseguridad.",
+      "Entorno Linux minimalista optimizado para prácticas CTF y pentesting.",
     tags: ["ArchLinux", "Hyprland", "Waybar", "Bash"],
     github: "https://github.com/espinalclark",
     link: "https://github.com/espinalclark/Hyprland-kali",
