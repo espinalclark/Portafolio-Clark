@@ -25,7 +25,7 @@ const projects = [
   },
   {
     image: "/assets/images/multi.jpeg",
-    title: "Multi Tool Security",
+    title: "ThreadDownloader",
     tech: "Python · Automation · Pentesting",
     description:
       "Script multihilo en Python para descargar archivos desde URLs directas de forma rápida y eficiente.",
