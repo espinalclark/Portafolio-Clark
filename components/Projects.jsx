@@ -6,32 +6,32 @@ const projects = [
   {
     image: "/assets/images/backdoor.png",
     title: "Backdoor Control Panel",
-    tech: "Python · Linux · Networking",
+    tech: "PowerShell · Windows · Networking",
     description:
       "Herramienta desarrollada para pruebas de seguridad en entornos controlados, enfocada en aprendizaje de técnicas ofensivas y control remoto.",
-    tags: ["Python", "Security", "Linux"],
-    github: "#",
-    link: "#",
+    tags: ["PowerShell", "Security", "Windows"],
+    github: "https://github.com/espinalclark",
+    link: "https://github.com/espinalclark/Scripting/tree/main/Backdoors",
   },
   {
     image: "/assets/images/hyprland.jpeg",
     title: "Personalización Arch Linux + Hyprland",
-    tech: "Arch Linux · Hyprland · Waybar · Kitty",
+    tech: "Arch Linux · Hyprland · Waybar ",
     description:
       "Configuración completa de entorno Linux minimalista optimizado para productividad y flujo de trabajo en ciberseguridad.",
-    tags: ["ArchLinux", "Hyprland", "Waybar"],
-    github: "#",
-    link: "#",
+    tags: ["ArchLinux", "Hyprland", "Waybar", "Bash"],
+    github: "https://github.com/espinalclark",
+    link: "https://github.com/espinalclark/Hyprland-kali",
   },
   {
     image: "/assets/images/multi.jpeg",
     title: "Multi Tool Security",
-    tech: "Bash · Automation · Pentesting",
+    tech: "Python · Automation · Pentesting",
     description:
-      "Suite de scripts para automatizar tareas de reconocimiento, escaneo y enumeración durante laboratorios de pentesting.",
-    tags: ["Bash", "Automation", "Pentesting"],
-    github: "#",
-    link: "#",
+      "Script multihilo en Python para descargar archivos desde URLs directas de forma rápida y eficiente.",
+    tags: ["Python", "Automation"],
+    github: "https://github.com/espinalclark",
+    link: "https://github.com/espinalclark/Multi_Thread",
   },
 ]
 
