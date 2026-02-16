@@ -16,14 +16,17 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("")
 
+  /* ===== Hide on scroll ===== */
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
+
       if (currentScrollY > lastScrollY && currentScrollY > 80) {
         setVisible(false)
       } else {
         setVisible(true)
       }
+
       setLastScrollY(currentScrollY)
     }
 
@@ -31,6 +34,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [lastScrollY])
 
+  /* ===== Active section ===== */
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -57,13 +61,27 @@ export default function Navbar() {
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 backdrop-blur-md bg-background/80 border-b border-border/50">
-        <a href="#" className="text-lg font-bold tracking-widest text-foreground uppercase">
+      <nav
+        className="
+          w-full
+          flex items-center justify-between
+          px-6 md:px-12 lg:px-20
+          py-4
+          backdrop-blur-md
+          bg-background/80
+          border-b border-border/50
+        "
+      >
+        {/* Logo */}
+        <a
+          href="#"
+          className="text-lg font-bold tracking-widest text-foreground uppercase"
+        >
           Clark Espinal
         </a>
 
-        {/* Desktop */}
-        <ul className="hidden md:flex items-center gap-8">
+        {/* Desktop menu */}
+        <ul className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
