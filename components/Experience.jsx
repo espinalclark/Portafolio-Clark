@@ -3,28 +3,23 @@
 const experiences = [
   {
     title: "Empresa VafTec Peru",
-    duration: "3 meses",
-    date: "2024 - 2025",
-    role: "FullStack",
-  },
-  {
-    title: "Equipo Freelance Ecommerce",
-    duration: "2 meses",
-    date: "2024",
-    role: "Backend y DBA",
-  },
-  {
-    title: "Sistema de asistencia QR",
     duration: "4 meses",
-    date: "2023",
-    role: "Backend",
+    date: "23/09/2025 - 15/12/2025",
+    role: "Programar Backend jr",
   },
   {
-    title: "Practicas Profesionales",
-    duration: "4 meses",
-    date: "2023",
-    role: "Frontend",
+    title: "Ingenieria de Ciberseguridad",
+    duration: "Actualidad",
+    date: "2023 - Actualidad",
+    role: "Estudiante",
   },
+  {
+    title: "Certifiacion eJPT",
+    duration: "Actualdiad",
+    date: "Actualidad",
+    role: "Estudiante",
+  },
+
 ]
 
 export default function Experience() {
