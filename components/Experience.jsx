@@ -2,70 +2,87 @@
 
 const experiences = [
   {
-    period: "23/09/2025 - 15/12/2025",
-    title: "Programador Junior",
-    company: "Vaftec Peru",
-    description:
-      "Participé como Backend Junior apoyando en el desarrollo y soporte de aplicaciones web, realizando pruebas básicas de APIs y análisis inicial de seguridad.",
+    title: "Empresa VafTec Peru",
+    duration: "3 meses",
+    date: "2024 - 2025",
+    role: "FullStack",
   },
   {
-    period: "2024 - Actualidad",
-    title: "Estudiante de Ciberseguridad",
-    company: "SENATI",
-    description:
-      "Estudio Ingeniería en Ciberseguridad en SENATI, especializándome progresivamente en pentesting y seguridad ofensiva.",
+    title: "Equipo Freelance Ecommerce",
+    duration: "2 meses",
+    date: "2024",
+    role: "Backend y DBA",
   },
   {
-    period: "Actualidad",
-    title: "Certificado eJPT",
-    company: "INE",
-    description:
-      "Me encuentro preparándome activamente para la certificación eJPT, practicando constantemente pentesting en laboratorios y entornos controlados para fortalecer habilidades en seguridad ofensiva.",
+    title: "Sistema de asistencia QR",
+    duration: "4 meses",
+    date: "2023",
+    role: "Backend",
+  },
+  {
+    title: "Practicas Profesionales",
+    duration: "4 meses",
+    date: "2023",
+    role: "Frontend",
   },
 ]
 
 export default function Experience() {
   return (
     <section id="experiencia" className="py-24 px-6">
-      <div className="mx-auto max-w-4xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">
+      <div className="max-w-6xl mx-auto">
+
+        {/* Title */}
+        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">
           Experiencia
         </h2>
-        <div className="h-1 w-16 bg-primary rounded mb-10" />
 
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-4 top-0 bottom-0 w-px bg-border md:left-1/2 md:-translate-x-px" />
 
-          <div className="flex flex-col gap-12">
+          {/* Línea central */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" />
+
+          <div className="flex flex-col gap-16">
             {experiences.map((exp, i) => (
               <div
                 key={i}
-                className={`relative flex flex-col md:flex-row ${
-                  i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                } items-start gap-8`}
+                className={`relative flex items-center ${
+                  i % 2 === 0 ? "justify-start" : "justify-end"
+                }`}
               >
-                {/* Dot */}
-                <div className="absolute left-4 top-1 h-3 w-3 rounded-full bg-primary md:left-1/2 md:-translate-x-1.5" />
+                {/* Punto timeline */}
+                <span className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary shadow-lg shadow-primary/40 z-10" />
 
-                {/* Content */}
+                {/* Card */}
                 <div
-                  className={`ml-12 md:ml-0 md:w-1/2 ${
-                    i % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"
-                  }`}
+                  className={`
+                    w-full md:w-[42%]
+                    bg-card
+                    border border-border
+                    rounded-xl
+                    p-6
+                    shadow-lg
+                    hover:shadow-primary/20
+                    transition-all
+                    duration-300
+                  `}
                 >
-                  <span className="text-xs tracking-wider uppercase text-primary font-semibold">
-                    {exp.period}
-                  </span>
-                  <h3 className="mt-1 text-lg font-bold text-foreground">
+                  <h3 className="text-lg font-semibold text-foreground">
                     {exp.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground font-medium mb-2">
-                    {exp.company}
+
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {exp.duration}
                   </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {exp.description}
+
+                  <p className="text-xs text-muted-foreground mb-4">
+                    {exp.date}
                   </p>
+
+                  {/* Badge */}
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                    {"</>"} {exp.role}
+                  </span>
                 </div>
               </div>
             ))}
