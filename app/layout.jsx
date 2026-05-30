@@ -1,26 +1,63 @@
-import { Space_Grotesk, Playfair_Display } from "next/font/google"
+import { JetBrains_Mono, Inter_Tight } from "next/font/google"
 import "./globals.css"
 
-const spaceGrotesk = Space_Grotesk({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-mono",
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 })
 
-const playfair = Playfair_Display({
+const interTight = Inter_Tight({
   subsets: ["latin"],
-  variable: "--font-serif",
+  variable: "--font-sans",
+  weight: ["300", "400", "500", "600"],
+  display: "swap",
 })
 
 export const metadata = {
-  title: "Clark Espinal | Pentester Junior",
+  title: "Clark Espinal",
   description:
-    "Portafolio de Clark Espinal - Pentester Junior especializado en seguridad informatica y hacking etico.",
+    "Clark Espinal — Pentester certificado eJPT. Especializado en seguridad ofensiva, análisis de vulnerabilidades y pruebas de penetración en entornos controlados.",
+  keywords: [
+    "pentester",
+    "eJPT",
+    "ciberseguridad",
+    "hacking ético",
+    "seguridad ofensiva",
+    "Clark Espinal",
+  ],
+  authors: [{ name: "Clark Espinal", url: "https://github.com/espinalclark" }],
+  openGraph: {
+    title: "Clark Espinal",
+    description:
+      "Portafolio técnico de Clark Espinal — seguridad ofensiva, write-ups y proyectos reales.",
+    url: "https://clarkportafolio.vercel.app",
+    siteName: "Clark Espinal",
+    locale: "es_PE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Clark Espinal",
+    description: "Seguridad ofensiva.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" className={`${spaceGrotesk.variable} ${playfair.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+    <html
+      lang="es"
+      className={`${jetbrainsMono.variable} ${interTight.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="font-sans antialiased bg-background text-foreground">
+        {children}
+      </body>
     </html>
   )
 }

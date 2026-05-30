@@ -1,57 +1,48 @@
 "use client"
-
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 
 const navLinks = [
-  { label: "Sobre Mi", href: "#sobre-mi" },
-  { label: "Experiencia", href: "#experiencia" },
-  { label: "Proyectos", href: "#proyectos" },
-  { label: "Habilidades", href: "#habilidades" },
+  { label: "sobre mí",       href: "#sobre-mi" },
+  { label: "experiencia",    href: "#experiencia" },
+  { label: "proyectos",      href: "#proyectos" },
+  { label: "write-ups",      href: "#writeups" },
+  { label: "skills",         href: "#habilidades" },
+  { label: "certs",          href: "#certificaciones" },
 ]
 
 export default function Navbar() {
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible]         = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileOpen, setMobileOpen]   = useState(false)
   const [activeSection, setActiveSection] = useState("")
+  const [scrolled, setScrolled]       = useState(false)
 
-  /* ===== Hide on scroll ===== */
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
-
-      if (currentScrollY > lastScrollY && currentScrollY > 80) {
-        setVisible(false)
-      } else {
-        setVisible(true)
-      }
-
-      setLastScrollY(currentScrollY)
+      const y = window.scrollY
+      setScrolled(y > 20)
+      if (y > lastScrollY && y > 80) setVisible(false)
+      else setVisible(true)
+      setLastScrollY(y)
     }
-
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [lastScrollY])
 
-  /* ===== Active section ===== */
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-          }
+          if (entry.isIntersecting) setActiveSection(entry.target.id)
         })
       },
       { threshold: 0.3 }
     )
-
-    navLinks.forEach((link) => {
-      const el = document.querySelector(link.href)
+    navLinks.forEach(({ href }) => {
+      const el = document.querySelector(href)
       if (el) observer.observe(el)
     })
-
     return () => observer.disconnect()
   }, [])
 
@@ -62,71 +53,95 @@ export default function Navbar() {
       }`}
     >
       <nav
-        className="
-          w-full
-          flex items-center justify-between
-          px-6 md:px-12 lg:px-20
-          py-4
-          backdrop-blur-md
-          bg-background/80
-          border-b border-border/50
-        "
+        style={{
+          background: scrolled ? "hsla(210, 14%, 7%, 0.92)" : "transparent",
+          borderBottom: scrolled ? "1px solid hsl(215, 12%, 18%)" : "1px solid transparent",
+          backdropFilter: scrolled ? "blur(12px)" : "none",
+          transition: "background 0.3s ease, border-color 0.3s ease",
+          padding: "1rem 1.5rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
       >
-        {/* Logo */}
         <a
           href="#"
-          className="text-lg font-bold tracking-widest text-foreground uppercase"
+          className="font-mono font-semibold text-sm"
+          style={{ color: "hsl(210, 20%, 90%)", letterSpacing: "0.05em" }}
         >
-          Clark Espinal
+          clark<span style={{ color: "hsl(210, 100%, 60%)" }}>@sec</span>
+          <span style={{ color: "hsl(210, 100%, 60%)" }} className="cursor-blink" />
         </a>
 
-        {/* Desktop menu */}
-        <ul className="hidden md:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className={`text-sm tracking-wider uppercase transition-colors duration-200 ${
-                  activeSection === link.href.slice(1)
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-primary"
-                }`}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-foreground"
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </nav>
-
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border/50">
-          <ul className="flex flex-col items-center gap-6 py-6">
-            {navLinks.map((link) => (
+        <ul className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.slice(1)
+            return (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className={`text-sm tracking-wider uppercase transition-colors duration-200 ${
-                    activeSection === link.href.slice(1)
-                      ? "text-primary"
-                      : "text-muted-foreground hover:text-primary"
-                  }`}
+                  className="font-mono text-xs transition-colors duration-200"
+                  style={{
+                    color: isActive ? "hsl(210, 100%, 60%)" : "hsl(215, 12%, 55%)",
+                    letterSpacing: "0.08em",
+                  }}
+                  onMouseEnter={e => {
+                    if (!isActive) e.target.style.color = "hsl(210, 20%, 85%)"
+                  }}
+                  onMouseLeave={e => {
+                    if (!isActive) e.target.style.color = "hsl(215, 12%, 55%)"
+                  }}
                 >
+                  {isActive && (
+                    <span style={{ color: "hsl(210, 100%, 60%)", marginRight: "4px" }}>/</span>
+                  )}
                   {link.label}
                 </a>
               </li>
-            ))}
+            )
+          })}
+        </ul>
+
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden"
+          aria-label="Toggle menu"
+          style={{ color: "hsl(210, 20%, 75%)" }}
+        >
+          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </nav>
+
+      {mobileOpen && (
+        <div
+          style={{
+            background: "hsla(210, 14%, 8%, 0.97)",
+            borderBottom: "1px solid hsl(215, 12%, 18%)",
+            backdropFilter: "blur(12px)",
+          }}
+        >
+          <ul className="flex flex-col items-start gap-0 py-2 px-6">
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href.slice(1)
+              return (
+                <li key={link.href} style={{ width: "100%" }}>
+                  <a
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="font-mono text-sm block py-3"
+                    style={{
+                      color: isActive ? "hsl(210, 100%, 60%)" : "hsl(215, 12%, 60%)",
+                      borderBottom: "1px solid hsl(215, 12%, 15%)",
+                    }}
+                  >
+                    <span style={{ color: "hsl(210, 100%, 60%)", marginRight: "8px" }}>
+                      {isActive ? "▶" : "//"}
+                    </span>
+                    {link.label}
+                  </a>
+                </li>
+              )
+            })}
           </ul>
         </div>
       )}

@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/credentials/v2",
+    "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+  ],
+  "type": [
+    "VerifiableCredential",
+    "OpenBadgeCredential"
+  ],
+  "id": "https://www.credential.net/3887f35f-2411-4eda-84f3-3bf4553786b1",
+  "name": "INE Certified Cloud Associate",
+  "description": "The INE Certified Cloud Associate certification is an entry-level certification designed for anyone interested in becoming part of the Cloud conversation within their organization. To best prepare you for the certification exam, we have organized more than 10 hours of training material into the INE Certified Cloud Associate learning path. This learning path covers general cloud concepts and how they are implemented in the three largest cloud provider platforms, including AWS, Azure, and Google Cloud Platform (GCP). In addition, training includes hands-on labs, quizzes, and videos to prepare you for the exam and other real-world applications.",
+  "image": {
+    "id": "https://pdf.ms.credential.net/v2/certificate/image?env=production&credential=6qihqs4r&variant=medium",
+    "type": "Image"
+  },
+  "issuer": {
+    "type": "Profile",
+    "id": "did:web:api.accredible.com:v1:verifiable_credential:organizations:106920",
+    "name": "INE",
+    "url": "https://www.ine.com"
+  },
+  "validFrom": "2025-12-28T00:00:00Z",
+  "validUntil": "2028-12-28T00:00:00Z",
+  "credentialSubject": {
+    "type": "AchievementSubject",
+    "identifier": [
+      {
+        "type": "IdentityObject",
+        "hashed": true,
+        "identityHash": "sha256$b2c50a6651b290dc1211cee1a320f3a9ff574f5bb14b2f9294793f60a3d3209c",
+        "identityType": "emailAddress",
+        "salt": "077fca650a61fe89c5f32fd208004cc7"
+      }
+    ],
+    "achievement": {
+      "id": "https://www.credential.net/group/492449",
+      "type": "Achievement",
+      "achievementType": "Achievement",
+      "name": "INE Certified Cloud Associate",
+      "description": "The INE Certified Cloud Associate certification is an entry-level certification designed for anyone interested in becoming part of the Cloud conversation within their organization. To best prepare you for the certification exam, we have organized more than 10 hours of training material into the INE Certified Cloud Associate learning path. This learning path covers general cloud concepts and how they are implemented in the three largest cloud provider platforms, including AWS, Azure, and Google Cloud Platform (GCP). In addition, training includes hands-on labs, quizzes, and videos to prepare you for the exam and other real-world applications.",
+      "criteria": {
+        "narrative": "https://ine.com/learning/certifications/internal/icca-ine-certified-cloud-associate"
+      }
+    }
+  },
+  "proof": {
+    "type": "DataIntegrityProof",
+    "cryptosuite": "eddsa-rdfc-2022",
+    "created": "2026-05-30T19:22:52Z",
+    "verificationMethod": "did:web:api.accredible.com:v1:verifiable_credential:organizations:106920#2bcd7318-dc11-11f0-aa4c-072951a83680",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "z2geRZUVh2wkDjaLCdbPDv92u6pW7Qvv2EVgXJnbFuMfYuedo67HDaMHbLBqEno23TTuAKDhkixuz28cr9J9F1JCD"
+  }
+}

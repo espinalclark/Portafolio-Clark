@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/credentials/v2",
+    "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+  ],
+  "type": [
+    "VerifiableCredential",
+    "OpenBadgeCredential"
+  ],
+  "id": "https://www.credential.net/deaa189f-1b5b-4cfd-9b07-3edaa39334d0",
+  "name": "Junior Penetration Tester",
+  "description": "The Junior Penetration Tester (eJPT) is a thoughtfully crafted certification designed to test you on every phase of the penetration life cycle from assessment methodologies, to host and network auditing, host and network penetration testing, and web application penetration testing. This browser-based, hands-on, exam mirrors real world junior penetration tasks using a methodological approach. Not only does our exam environment feature modern infrastructure, operating systems, and current versions of software, but it also uses innovative technology to make each user’s testing experience unique.",
+  "image": {
+    "id": "https://pdf.ms.credential.net/v2/certificate/image?env=production&credential=7b3ftsjl&variant=medium",
+    "type": "Image"
+  },
+  "issuer": {
+    "type": "Profile",
+    "id": "did:web:api.accredible.com:v1:verifiable_credential:organizations:106920",
+    "name": "INE",
+    "url": "https://www.ine.com"
+  },
+  "validFrom": "2026-05-29T00:00:00Z",
+  "validUntil": "2029-05-29T00:00:00Z",
+  "credentialSubject": {
+    "type": "AchievementSubject",
+    "identifier": [
+      {
+        "type": "IdentityObject",
+        "hashed": true,
+        "identityHash": "sha256$21deb9f91f192957f692851cdd96642fd00ee78022481eb008014fe16966b283",
+        "identityType": "emailAddress",
+        "salt": "18ac5304ec5a433e66a23418497047bd"
+      }
+    ],
+    "achievement": {
+      "id": "https://www.credential.net/group/811990",
+      "type": "Achievement",
+      "achievementType": "Achievement",
+      "name": "Junior Penetration Tester",
+      "description": "The Junior Penetration Tester (eJPT) is a thoughtfully crafted certification designed to test you on every phase of the penetration life cycle from assessment methodologies, to host and network auditing, host and network penetration testing, and web application penetration testing. This browser-based, hands-on, exam mirrors real world junior penetration tasks using a methodological approach. Not only does our exam environment feature modern infrastructure, operating systems, and current versions of software, but it also uses innovative technology to make each user’s testing experience unique.",
+      "criteria": {
+        "narrative": "https://ine.com/learning/certifications/internal/elearnsecurity-junior-penetration-tester-cert"
+      }
+    }
+  },
+  "proof": {
+    "type": "DataIntegrityProof",
+    "cryptosuite": "eddsa-rdfc-2022",
+    "created": "2026-05-30T19:21:17Z",
+    "verificationMethod": "did:web:api.accredible.com:v1:verifiable_credential:organizations:106920#2bcd7318-dc11-11f0-aa4c-072951a83680",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "z3QdxT9yeNnNf6PHdjmTs9uWdCpzGFTftJRRzegFeCVPHnVzAMwTNVnSg8ZQATscNgrpcPKxDedxttwYdfTfKFPFq"
+  }
+}

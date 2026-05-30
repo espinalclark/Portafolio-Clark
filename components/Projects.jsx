@@ -1,135 +1,135 @@
 "use client"
-
-import { Github } from "lucide-react"
+import { Github, ExternalLink } from "lucide-react"
 
 const projects = [
   {
     image: "/assets/images/backdoor.png",
     title: "Backdoor Control Panel",
-    tech: "PowerShell · Windows · Networking",
+    tech: ["PowerShell", "Windows", "Networking"],
     description:
-      "Herramienta desarrollada para pruebas de seguridad en entornos controlados, enfocada en aprendizaje de técnicas ofensivas y control remoto.",
-    tags: ["PowerShell", "Security", "Windows"],
-    github: "https://github.com/espinalclark",
-    link: "https://github.com/espinalclark/Scripting/blob/main/Backdoors/backdoor.ps1",
+      "Script PowerShell de C2 básico — reverse shell, persistencia y control remoto. Desarrollado para entender técnicas ofensivas en entornos de laboratorio.",
+    github: "https://github.com/espinalclark/Scripting/blob/main/Backdoors/backdoor.ps1",
+    highlight: true,
   },
   {
     image: "/assets/images/hyprland.jpeg",
-    title: "Personalización Arch Linux + Hyprland",
-    tech: "Arch Linux · Hyprland · Waybar ",
+    title: "Arch Linux + Hyprland",
+    tech: ["Arch Linux", "Hyprland", "Waybar", "Bash"],
     description:
-      "Entorno Linux minimalista optimizado para prácticas CTF y pentesting.",
-    tags: ["ArchLinux", "Hyprland", "Waybar", "Bash"],
-    github: "https://github.com/espinalclark",
-    link: "https://github.com/espinalclark/Hyprland-kali",
+      "Entorno Linux minimalista optimizado para prácticas CTF y pentesting. Configuración completa desde cero.",
+    github: "https://github.com/espinalclark/Hyprland-kali",
+    highlight: false,
   },
   {
     image: "/assets/images/multi.jpeg",
     title: "ThreadDownloader",
-    tech: "Python · Automation · Pentesting",
+    tech: ["Python", "Multithreading"],
     description:
-      "Script multihilo en Python para descargar archivos desde URLs directas de forma rápida y eficiente.",
-    tags: ["Python", "Automation"],
-    github: "https://github.com/espinalclark",
-    link: "https://github.com/espinalclark/Multi_Thread",
+      "Script multihilo en Python para descarga masiva de archivos desde URLs directas. Útil en fases de recolección de recursos.",
+    github: "https://github.com/espinalclark/Multi_Thread",
+    highlight: false,
   },
 ]
 
 export default function Projects() {
   return (
-    <section id="proyectos" className="py-24 px-6">
-      <div className="max-w-7xl mx-auto">
+    <section id="proyectos" className="py-24 px-6 md:px-16 lg:px-24">
+      <div className="max-w-4xl">
 
-        {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">
-          Proyectos
+        <p className="section-label mb-4">// proyectos</p>
+        <h2 className="font-mono font-bold text-white mb-12">
+          Código propio
         </h2>
 
-        {/* Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
             <div
               key={i}
-              className="
-                group
-                bg-card
-                border border-border
-                rounded-xl
-                overflow-hidden
-                transition-all duration-300
-                hover:-translate-y-2
-                hover:border-primary/40
-              "
+              className="group card-dark overflow-hidden flex flex-col"
+              style={project.highlight ? {
+                borderColor: "hsl(210, 60%, 28%)",
+                background: "hsl(210, 30%, 10%)",
+              } : {}}
             >
               {/* Imagen */}
-              <div className="relative bg-muted flex items-center justify-center h-44 overflow-hidden">
-
+              <div
+                className="relative overflow-hidden"
+                style={{
+                  height: "160px",
+                  background: "hsl(215, 13%, 9%)",
+                }}
+              >
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="
-                    max-h-full
-                    max-w-full
-                    object-contain
-                    transition-transform duration-500
-                    group-hover:scale-105
-                  "
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={{ opacity: 0.85 }}
                 />
-
-                {/* Tags flotantes */}
-                <div className="absolute top-3 left-3 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="bg-black/80 text-white text-xs px-2 py-1 rounded-md"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                {/* Overlay gradiente sutil */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: "linear-gradient(to top, hsl(210, 30%, 10%) 0%, transparent 60%)",
+                  }}
+                />
               </div>
 
               {/* Content */}
-              <div className="p-5 flex flex-col h-[220px]">
-
-                <h3 className="text-foreground font-semibold text-lg mb-2">
+              <div className="p-5 flex flex-col flex-grow">
+                <h3
+                  className="font-mono font-semibold text-sm mb-2"
+                  style={{
+                    color: project.highlight
+                      ? "hsl(210, 100%, 70%)"
+                      : "hsl(210, 20%, 88%)",
+                  }}
+                >
                   {project.title}
                 </h3>
 
-                <p className="text-xs text-muted-foreground mb-2">
-                  {project.tech}
-                </p>
-
-                <p className="text-sm text-muted-foreground flex-grow leading-relaxed">
+                <p
+                  className="text-xs leading-relaxed mb-4 flex-grow"
+                  style={{ color: "hsl(215, 12%, 55%)" }}
+                >
                   {project.description}
                 </p>
 
-                {/* Footer */}
-                <div className="flex items-center justify-between mt-4">
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {project.tech.map((t) => (
+                    <span key={t} className="badge-tech">{t}</span>
+                  ))}
+                </div>
 
-                  {/* Github */}
+                {/* Footer */}
+                <div
+                  className="pt-4 flex items-center justify-between"
+                  style={{ borderTop: "1px solid hsl(215, 12%, 18%)" }}
+                >
+                  <a
+                    href={`https://github.com/espinalclark`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-xs font-mono transition-colors"
+                    style={{ color: "hsl(215, 12%, 45%)" }}
+                    onMouseEnter={e => e.currentTarget.style.color = "hsl(210, 20%, 75%)"}
+                    onMouseLeave={e => e.currentTarget.style.color = "hsl(215, 12%, 45%)"}
+                  >
+                    <Github size={14} />
+                    espinalclark
+                  </a>
                   <a
                     href={project.github}
-                    className="
-                      w-9 h-9
-                      flex items-center justify-center
-                      rounded-full
-                      bg-muted
-                      hover:bg-primary/20
-                      transition
-                    "
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-xs font-mono transition-colors"
+                    style={{ color: "hsl(210, 100%, 60%)" }}
+                    onMouseEnter={e => e.currentTarget.style.color = "hsl(210, 100%, 75%)"}
+                    onMouseLeave={e => e.currentTarget.style.color = "hsl(210, 100%, 60%)"}
                   >
-                    <Github size={16} className="text-foreground" />
+                    ver código
+                    <ExternalLink size={12} />
                   </a>
-
-                  {/* Link */}
-                  <a
-                    href={project.link}
-                    className="text-primary text-sm font-medium hover:underline"
-                  >
-                    Link
-                  </a>
-
                 </div>
               </div>
             </div>
