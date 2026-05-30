@@ -1,8 +1,5 @@
 "use client"
 import { ExternalLink } from "lucide-react"
-import Lottie from "lottie-react"
-import eJPTAnim from "@/public/assets/icons/eJPT.json"
-import ICCAAnim from "@/public/assets/icons/ICCA.json"
 
 const CiscoLogo = () => (
   <svg width="28" height="28" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +42,7 @@ const certs = [
     date: "Mar 2025",
     url: "https://certs.ine.com/97f82cd1-bb44-4547-8326-b389abbdd680",
     highlight: false,
-    logo: "cisco",
+    logo: "hacker",
     tags: ["ethical hacking", "reconocimiento", "explotación"],
   },
   {
@@ -73,15 +70,22 @@ const certs = [
 function CertLogo({ type }) {
   if (type === "ejpt") {
     return (
-      <div style={{ width: 44, height: 44 }}>
-        <Lottie animationData={eJPTAnim} loop={true} style={{ width: 44, height: 44 }} />
+      <div className="w-11 h-11 rounded-md overflow-hidden flex items-center justify-center shrink-0">
+        <img src="/assets/icons/eJPT.png" alt="eJPT" width={44} height={44} style={{ objectFit: "contain" }} />
       </div>
     )
   }
   if (type === "icca") {
     return (
-      <div style={{ width: 44, height: 44 }}>
-        <Lottie animationData={ICCAAnim} loop={true} style={{ width: 44, height: 44 }} />
+      <div className="w-11 h-11 rounded-md overflow-hidden flex items-center justify-center shrink-0">
+        <img src="/assets/icons/ICCA.png" alt="ICCA" width={44} height={44} style={{ objectFit: "contain" }} />
+      </div>
+    )
+  }
+  if (type === "hacker") {
+    return (
+      <div className="w-11 h-11 rounded-md overflow-hidden flex items-center justify-center shrink-0">
+        <img src="/assets/icons/hacker.png" alt="Hacker Ético" width={44} height={44} style={{ objectFit: "contain" }} />
       </div>
     )
   }
