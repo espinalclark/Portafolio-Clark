@@ -18,12 +18,12 @@ const interTight = Inter_Tight({
 export const metadata = {
   title: "Clark Espinal",
   description:
-    "Clark Espinal — Pentester certificado eJPT. Especializado en seguridad ofensiva, análisis de vulnerabilidades y pruebas de penetración en entornos controlados.",
+    "Clark Espinal — Pentester certificado eJPT. Especializado en seguridad ofensiva, analisis de vulnerabilidades y pruebas de penetracion en entornos controlados.",
   keywords: [
     "pentester",
     "eJPT",
     "ciberseguridad",
-    "hacking ético",
+    "hacking etico",
     "seguridad ofensiva",
     "Clark Espinal",
   ],
@@ -31,7 +31,7 @@ export const metadata = {
   openGraph: {
     title: "Clark Espinal",
     description:
-      "Portafolio técnico de Clark Espinal — seguridad ofensiva, write-ups y proyectos reales.",
+      "Portafolio tecnico de Clark Espinal — seguridad ofensiva, write-ups y proyectos reales.",
     url: "https://clarkportafolio.vercel.app",
     siteName: "Clark Espinal",
     locale: "es_PE",

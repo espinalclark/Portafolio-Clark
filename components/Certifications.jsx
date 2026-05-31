@@ -1,16 +1,17 @@
-"use client"
+ "use client"
+
 import { ExternalLink } from "lucide-react"
 
 const CiscoLogo = () => (
-  <svg width="28" height="28" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="85" y="10" width="30" height="60" rx="8" fill="#049fd9"/>
-    <rect x="85" y="130" width="30" height="60" rx="8" fill="#049fd9"/>
-    <rect x="130" y="35" width="30" height="50" rx="8" fill="#049fd9"/>
-    <rect x="40" y="35" width="30" height="50" rx="8" fill="#049fd9"/>
-    <rect x="160" y="70" width="30" height="40" rx="8" fill="#049fd9"/>
-    <rect x="10" y="70" width="30" height="40" rx="8" fill="#049fd9"/>
-    <rect x="130" y="115" width="30" height="50" rx="8" fill="#049fd9"/>
-    <rect x="40" y="115" width="30" height="50" rx="8" fill="#049fd9"/>
+  <svg width="28" height="28" viewBox="0 0 200 200" fill="none">
+    <rect x="85" y="10" width="30" height="60" rx="8" fill="#00ff41" />
+    <rect x="85" y="130" width="30" height="60" rx="8" fill="#00ff41" />
+    <rect x="130" y="35" width="30" height="50" rx="8" fill="#00ff41" />
+    <rect x="40" y="35" width="30" height="50" rx="8" fill="#00ff41" />
+    <rect x="160" y="70" width="30" height="40" rx="8" fill="#00ff41" />
+    <rect x="10" y="70" width="30" height="40" rx="8" fill="#00ff41" />
+    <rect x="130" y="115" width="30" height="50" rx="8" fill="#00ff41" />
+    <rect x="40" y="115" width="30" height="50" rx="8" fill="#00ff41" />
   </svg>
 )
 
@@ -21,9 +22,9 @@ const certs = [
     issuer: "INE",
     date: "Mayo 2026",
     url: "https://certs.ine.com/deaa189f-1b5b-4cfd-9b07-3edaa39334d0",
-    highlight: true,
     logo: "ejpt",
-    tags: ["pentesting", "redes", "web", "pivoting"],
+    tags: ["Pentesting", "Redes", "Web", "Pivoting"],
+    featured: true,
   },
   {
     title: "INE Certified Cloud Associate",
@@ -31,9 +32,8 @@ const certs = [
     issuer: "INE",
     date: "Dic 2025",
     url: "https://certs.ine.com/3887f35f-2411-4eda-84f3-3bf4553786b1",
-    highlight: false,
     logo: "icca",
-    tags: ["cloud", "aws", "infraestructura"],
+    tags: ["Cloud", "AWS", "Infraestructura"],
   },
   {
     title: "Hacker Ético",
@@ -41,9 +41,8 @@ const certs = [
     issuer: "Cisco Networking Academy",
     date: "Mar 2025",
     url: "https://certs.ine.com/97f82cd1-bb44-4547-8326-b389abbdd680",
-    highlight: false,
     logo: "hacker",
-    tags: ["ethical hacking", "reconocimiento", "explotación"],
+    tags: ["Reconocimiento", "Explotación", "Seguridad"],
   },
   {
     title: "Networking Essentials",
@@ -51,9 +50,8 @@ const certs = [
     issuer: "Cisco Networking Academy",
     date: "Jul 2024",
     url: "https://certs.ine.com/a15fe91b-0d43-4a4d-8992-1f92040a5fea",
-    highlight: false,
     logo: "cisco",
-    tags: ["tcp/ip", "redes", "protocolos"],
+    tags: ["TCP/IP", "Redes", "Protocolos"],
   },
   {
     title: "Programming Essentials in Python",
@@ -61,38 +59,37 @@ const certs = [
     issuer: "Cisco Networking Academy",
     date: "Jul 2024",
     url: "https://certs.ine.com/66918772-5678-4786-a084-389e2f6fcd34",
-    highlight: false,
     logo: "cisco",
-    tags: ["python", "scripting", "automatización"],
+    tags: ["Python", "Scripting", "Automatización"],
   },
 ]
 
 function CertLogo({ type }) {
   if (type === "ejpt") {
     return (
-      <div className="w-11 h-11 rounded-md overflow-hidden flex items-center justify-center shrink-0">
-        <img src="/assets/icons/eJPT.png" alt="eJPT" width={44} height={44} style={{ objectFit: "contain" }} />
-      </div>
+      <img src="/assets/icons/eJPT.png" className="w-12 h-12 object-contain" />
     )
   }
+
   if (type === "icca") {
     return (
-      <div className="w-11 h-11 rounded-md overflow-hidden flex items-center justify-center shrink-0">
-        <img src="/assets/icons/ICCA.png" alt="ICCA" width={44} height={44} style={{ objectFit: "contain" }} />
-      </div>
+      <img src="/assets/icons/ICCA.png" className="w-12 h-12 object-contain" />
     )
   }
+
   if (type === "hacker") {
     return (
-      <div className="w-11 h-11 rounded-md overflow-hidden flex items-center justify-center shrink-0">
-        <img src="/assets/icons/hacker.png" alt="Hacker Ético" width={44} height={44} style={{ objectFit: "contain" }} />
-      </div>
+      <img src="/assets/icons/hacker.png" className="w-12 h-12 object-contain" />
     )
   }
+
   return (
     <div
-      className="w-11 h-11 rounded-md flex items-center justify-center shrink-0"
-      style={{ background: "hsl(215, 13%, 13%)", border: "1px solid hsl(215, 12%, 20%)" }}
+      className="w-12 h-12 rounded-xl flex items-center justify-center"
+      style={{
+        background: "rgba(0,255,65,.08)",
+        border: "1px solid rgba(0,255,65,.18)",
+      }}
     >
       <CiscoLogo />
     </div>
@@ -101,80 +98,139 @@ function CertLogo({ type }) {
 
 export default function Certifications() {
   return (
-    <section id="certificaciones" className="py-24 px-6 md:px-16 lg:px-24">
-      <div className="max-w-4xl">
+    <section
+      id="certificaciones"
+      className="relative py-24 px-6 md:px-16 lg:px-24 overflow-hidden"
+    >
+      <div
+        className="absolute left-1/2 top-0 -translate-x-1/2 w-[600px] h-[600px] blur-[160px]"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(0,255,65,.08), transparent 70%)",
+        }}
+      />
 
-        <p className="section-label mb-4">// certificaciones</p>
-        <h2 className="font-mono font-bold text-white mb-12">
+      <div className="relative max-w-5xl mx-auto">
+
+        <p className="section-label mb-3 text-center">
+          // certificaciones
+        </p>
+
+        <h2
+          className="font-mono font-bold text-center mb-3"
+          style={{ color: "#00ff41", fontSize: "clamp(2rem,4vw,2.6rem)" }}
+        >
           Credenciales
         </h2>
 
-        <div className="space-y-3">
-          {certs.map((cert) => (
+        <p
+          className="text-center mb-10 text-sm"
+          style={{ color: "rgba(180,255,200,.6)" }}
+        >
+          Certificaciones verificables en pentesting, cloud y redes.
+        </p>
+
+        <div className="grid gap-5">
+
+          {certs.map((cert, i) => (
             <a
               key={cert.short}
               href={cert.url}
               target="_blank"
-              rel="noopener noreferrer"
-              className="group block card-dark p-5 no-underline"
-              style={cert.highlight ? {
-                borderColor: "hsl(210, 60%, 28%)",
-                background: "hsl(210, 30%, 10%)",
-              } : {}}
+              className="
+                group
+                relative
+                overflow-hidden
+                rounded-3xl
+                p-5
+                transition-all
+                duration-500
+                hover:-translate-y-2
+                hover:scale-[1.01]
+              "
+              style={{
+                background: "rgba(0,0,0,.35)",
+                border: cert.featured
+                  ? "1px solid rgba(0,255,65,.35)"
+                  : "1px solid rgba(0,255,65,.12)",
+              }}
             >
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex items-start gap-4">
-                  <div className="shrink-0 mt-0.5">
+
+              <div
+                className="
+                  absolute inset-0 opacity-0 group-hover:opacity-100
+                  transition-opacity duration-500
+                "
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(0,255,65,.10), transparent 50%)",
+                }}
+              />
+
+              <div className="relative z-10 flex items-start justify-between gap-4">
+
+                <div className="flex gap-4">
+
+                  <div className="transition-all duration-500 group-hover:scale-110">
                     <CertLogo type={cert.logo} />
                   </div>
+
                   <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span
-                        className="font-mono font-semibold text-sm"
-                        style={{
-                          color: cert.highlight
-                            ? "hsl(210, 100%, 70%)"
-                            : "hsl(210, 20%, 88%)",
-                        }}
-                      >
-                        {cert.title}
-                      </span>
-                      {cert.highlight && (
+
+                    <h3
+                      className="font-mono font-bold text-base mb-1 group-hover:translate-x-1 transition-all"
+                      style={{
+                        color: cert.featured ? "#00ff41" : "hsl(120,50%,88%)",
+                      }}
+                    >
+                      {cert.title}
+                    </h3>
+
+                    <p
+                      className="text-xs mb-3"
+                      style={{ color: "rgba(180,255,200,.6)" }}
+                    >
+                      {cert.issuer} • {cert.date}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2">
+
+                      {cert.tags.map((tag) => (
                         <span
-                          className="text-xs font-mono px-2 py-0.5 rounded"
+                          key={tag}
+                          className="
+                            px-2.5 py-1 rounded-md text-[11px] font-mono
+                            transition-all hover:scale-105
+                          "
                           style={{
-                            background: "hsl(210, 80%, 18%)",
-                            color: "hsl(210, 100%, 65%)",
-                            border: "1px solid hsl(210, 60%, 28%)",
+                            background: "rgba(0,255,65,.06)",
+                            border: "1px solid rgba(0,255,65,.12)",
+                            color: "rgba(180,255,200,.7)",
                           }}
                         >
-                          principal
+                          {tag}
                         </span>
-                      )}
-                    </div>
-                    <p className="text-xs mb-3" style={{ color: "hsl(215, 12%, 50%)" }}>
-                      {cert.issuer} · {cert.date}
-                    </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {cert.tags.map((tag) => (
-                        <span key={tag} className="badge-tech">{tag}</span>
                       ))}
+
                     </div>
+
                   </div>
                 </div>
-                <ExternalLink
-                  size={15}
-                  className="shrink-0 mt-1 transition-colors duration-200 group-hover:text-accent"
-                  style={{ color: "hsl(215, 12%, 35%)" }}
-                />
+
+                <ExternalLink size={16} color="#00ff41" />
+
               </div>
+
             </a>
           ))}
         </div>
 
-        <p className="mt-8 text-xs font-mono" style={{ color: "hsl(215, 10%, 35%)" }}>
-          // todas verificables — click en cada card para validar
-        </p>
+        <div className="mt-10 text-center">
+          <p className="font-mono text-xs" style={{ color: "rgba(180,255,200,.35)" }}>
+            // todas las credenciales son verificables mediante enlace oficial
+          </p>
+        </div>
+
       </div>
     </section>
   )

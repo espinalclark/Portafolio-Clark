@@ -1,53 +1,135 @@
 "use client"
-import { Download, Linkedin, Github, ArrowDown } from "lucide-react"
 
-const stack = ["nmap", "burpsuite", "metasploit", "python", "bash"]
+import { useEffect, useRef } from "react"
+import { Download, Linkedin, Github } from "lucide-react"
 
 export default function Hero() {
+  const blobRef = useRef(null)
+
+  useEffect(() => {
+    const move = (e) => {
+      if (!blobRef.current) return
+
+      blobRef.current.style.left = e.clientX + "px"
+      blobRef.current.style.top = e.clientY + "px"
+    }
+
+    window.addEventListener("mousemove", move)
+
+    return () => {
+      window.removeEventListener("mousemove", move)
+    }
+  }, [])
+
   return (
-    <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 pt-24 pb-16">
+    <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 pb-16 overflow-hidden">
 
-      {/* Grid background sutil */}
-      <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
+      {/* Grid Hacker */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(0,255,65,.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,255,65,.03) 1px, transparent 1px)
+          `,
+          backgroundSize: "45px 45px",
+          maskImage:
+            "radial-gradient(circle at center, black 45%, transparent 95%)",
+        }}
+      />
 
-      {/* Contenido — alineado a la izquierda */}
-      <div className="relative max-w-3xl">
+      {/* Cursor Glow */}
+      <div
+        ref={blobRef}
+        style={{
+          position: "fixed",
+          width: "650px",
+          height: "650px",
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle, rgba(0,255,65,.10) 0%, transparent 70%)",
+          pointerEvents: "none",
+          transform: "translate(-50%,-50%)",
+          transition: "left .08s linear, top .08s linear",
+          filter: "blur(60px)",
+          zIndex: 1,
+        }}
+      />
 
-        {/* Label superior */}
-        <p className="section-label mb-6 fade-up">
+      {/* Glow central */}
+      <div
+        className="absolute"
+        style={{
+          width: "500px",
+          height: "500px",
+          borderRadius: "999px",
+          background: "rgba(0,255,65,.04)",
+          filter: "blur(120px)",
+          animation: "pulseGlow 8s ease-in-out infinite",
+        }}
+      />
+
+      <div
+        className="relative flex flex-col items-center gap-8"
+        style={{ zIndex: 10 }}
+      >
+        <p
+          className="section-label"
+          style={{
+            animation: "fadeUp .7s ease forwards",
+          }}
+        >
           // seguridad ofensiva
         </p>
 
-        {/* Nombre */}
-        <h1 className="font-mono font-bold leading-none text-white fade-up delay-100">
+        <h1
+          className="font-mono font-bold leading-none"
+          style={{
+            fontSize: "clamp(4rem,12vw,8rem)",
+            letterSpacing: "-0.05em",
+            color: "hsl(120,100%,55%)",
+            textShadow:
+              "0 0 10px rgba(0,255,65,.5), 0 0 25px rgba(0,255,65,.25)",
+            animation:
+              "fadeUp .9s ease forwards, heroGlow 4s ease-in-out infinite",
+          }}
+        >
           Clark
-          <br />
-          <span className="text-accent">Espinal.</span>
         </h1>
 
-        {/* Descripción casual */}
-        <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed fade-up delay-200">
-          <span className="text-white font-medium">eJPT</span> cert. Estudiante
-          de ciberseguridad en Perú. Buscando entrar al mundo laboral en
-          seguridad.
+        <div
+          style={{
+            width: "140px",
+            height: "1px",
+            background:
+              "linear-gradient(90deg, transparent, rgba(0,255,65,.8), transparent)",
+            animation: "scanline 3s linear infinite",
+          }}
+        />
+
+        <p
+          className="font-mono"
+          style={{
+            color: "hsl(120,20%,40%)",
+            fontSize: ".85rem",
+            letterSpacing: ".25em",
+            animation: "fadeUp 1.1s ease forwards",
+          }}
+        >
+          PENTESTER JUNIOR · PERU
         </p>
 
-        {/* Stack chips */}
-        <div className="mt-8 flex flex-wrap gap-2 fade-up delay-300">
-          {stack.map((tool) => (
-            <span key={tool} className="badge-tech">
-              {tool}
-            </span>
-          ))}
-        </div>
+        <div
+          className="flex flex-wrap justify-center items-center gap-4"
+          style={{
+            animation: "fadeUp 1.3s ease forwards",
+          }}
+        >
 
-        {/* CTAs */}
-        <div className="mt-10 flex flex-wrap items-center gap-4 fade-up delay-400">
           <a
             href="/assets/cv/CV_CLARK.pdf"
             download="CV_CLARK.pdf"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-accent-primary text-background text-sm font-semibold transition-all hover:opacity-90 active:scale-95"
-            style={{ background: "hsl(210, 100%, 60%)", color: "hsl(210, 14%, 7%)" }}
+            className="hero-btn hero-btn-primary"
           >
             <Download size={16} />
             Descargar CV
@@ -57,37 +139,146 @@ export default function Hero() {
             href="https://github.com/espinalclark"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md border text-sm font-medium transition-all hover:border-accent-primary hover:text-accent"
-            style={{ borderColor: "hsl(215, 12%, 25%)", color: "hsl(210, 20%, 75%)" }}
+            className="hero-btn hero-btn-secondary"
           >
             <Github size={16} />
             GitHub
           </a>
 
           <a
-            href="https://linkedin.com/in/espinalclark/"
+            href="https://linkedin.com/in/espinalclark"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md border text-sm font-medium transition-all hover:border-accent-primary hover:text-accent"
-            style={{ borderColor: "hsl(215, 12%, 25%)", color: "hsl(210, 20%, 75%)" }}
+            className="hero-btn hero-btn-secondary"
           >
             <Linkedin size={16} />
             LinkedIn
           </a>
+
         </div>
-
-        {/* Ubicación casual */}
-        <p className="mt-10 text-xs text-dim font-mono fade-up delay-500">
-          <span style={{ color: "hsl(142, 70%, 45%)" }}>●</span>{" "}
-          Perú · buscando trabajo en seguridad ofensiva
-        </p>
       </div>
+          <style jsx>{`
+        .hero-btn {
+          position: relative;
+          overflow: hidden;
+          display: inline-flex;
+          align-items: center;
+          gap: .6rem;
+          padding: .9rem 1.6rem;
+          font-family: monospace;
+          font-size: .85rem;
+          border-radius: 4px;
+          transition: all .35s ease;
+          transform-style: preserve-3d;
+        }
 
-      {/* Scroll hint */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-        <span className="text-xs font-mono text-muted-foreground">scroll</span>
-        <ArrowDown size={14} className="text-muted-foreground animate-bounce" />
-      </div>
+        .hero-btn::before {
+          content: "";
+          position: absolute;
+          top: -50%;
+          left: -120%;
+          width: 70px;
+          height: 220%;
+          background: rgba(255,255,255,.15);
+          transform: rotate(25deg);
+          transition: .8s;
+        }
+
+        .hero-btn:hover::before {
+          left: 150%;
+        }
+
+        .hero-btn:hover {
+          transform:
+            translateY(-5px)
+            scale(1.05);
+        }
+
+        .hero-btn-primary {
+          background: hsl(120,100%,50%);
+          color: #000;
+          box-shadow:
+            0 0 10px rgba(0,255,65,.25),
+            0 0 30px rgba(0,255,65,.12);
+        }
+
+        .hero-btn-primary:hover {
+          box-shadow:
+            0 0 20px rgba(0,255,65,.6),
+            0 0 50px rgba(0,255,65,.25);
+        }
+
+        .hero-btn-secondary {
+          border: 1px solid rgba(0,255,65,.25);
+          color: hsl(120,60%,65%);
+          background: rgba(0,0,0,.25);
+          backdrop-filter: blur(12px);
+        }
+
+        .hero-btn-secondary:hover {
+          border-color: rgba(0,255,65,.8);
+          box-shadow:
+            0 0 15px rgba(0,255,65,.25),
+            inset 0 0 15px rgba(0,255,65,.05);
+        }
+
+        .hero-btn svg {
+          transition: .35s;
+        }
+
+        .hero-btn:hover svg {
+          transform:
+            scale(1.15)
+            rotate(6deg);
+        }
+
+        @keyframes heroGlow {
+          0%,100% {
+            text-shadow:
+              0 0 10px rgba(0,255,65,.4),
+              0 0 25px rgba(0,255,65,.2);
+          }
+
+          50% {
+            text-shadow:
+              0 0 18px rgba(0,255,65,.8),
+              0 0 45px rgba(0,255,65,.4);
+          }
+        }
+
+        @keyframes pulseGlow {
+          0%,100% {
+            transform: scale(1);
+          }
+
+          50% {
+            transform: scale(1.15);
+          }
+        }
+
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(25px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes scanline {
+          0% {
+            transform: translateX(-60px);
+          }
+
+          100% {
+            transform: translateX(60px);
+          }
+        }
+      `}</style>
+
     </section>
   )
 }

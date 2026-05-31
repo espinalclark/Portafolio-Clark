@@ -1,16 +1,8 @@
 "use client"
+
 import { Github, ExternalLink } from "lucide-react"
 
 const projects = [
-  {
-    image: "/assets/images/backdoor.png",
-    title: "Backdoor Control Panel",
-    tech: ["PowerShell", "Windows", "Networking"],
-    description:
-      "Script PowerShell de C2 básico — reverse shell, persistencia y control remoto. Desarrollado para entender técnicas ofensivas en entornos de laboratorio.",
-    github: "https://github.com/espinalclark/Scripting/blob/main/Backdoors/backdoor.ps1",
-    highlight: true,
-  },
   {
     image: "/assets/images/hyprland.jpeg",
     title: "Arch Linux + Hyprland",
@@ -18,14 +10,14 @@ const projects = [
     description:
       "Entorno Linux minimalista optimizado para prácticas CTF y pentesting. Configuración completa desde cero.",
     github: "https://github.com/espinalclark/Hyprland-kali",
-    highlight: false,
+    highlight: true,
   },
   {
     image: "/assets/images/multi.jpeg",
     title: "ThreadDownloader",
     tech: ["Python", "Multithreading"],
     description:
-      "Script multihilo en Python para descarga masiva de archivos desde URLs directas. Útil en fases de recolección de recursos.",
+      "Script multihilo en Python para descarga masiva de archivos desde URLs directas. Útil para automatización y recolección de recursos.",
     github: "https://github.com/espinalclark/Multi_Thread",
     highlight: false,
   },
@@ -33,108 +25,246 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="proyectos" className="py-24 px-6 md:px-16 lg:px-24">
-      <div className="max-w-4xl">
+    <section
+      id="proyectos"
+      className="relative py-24 px-6 md:px-16 lg:px-24 overflow-hidden"
+    >
 
-        <p className="section-label mb-4">// proyectos</p>
-        <h2 className="font-mono font-bold text-white mb-12">
-          Código propio
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[650px] h-[650px] rounded-full blur-[160px]"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(0,255,65,.08), transparent 70%)",
+        }}
+      />
+
+      <div className="relative max-w-7xl mx-auto">
+
+        <p className="section-label mb-3 text-center">
+          // proyectos
+        </p>
+
+        <h2
+          className="font-mono font-bold text-center mb-3"
+          style={{
+            color: "#00ff41",
+            fontSize: "clamp(1.8rem,4.5vw,2.8rem)",
+          }}
+        >
+          Código Propio
         </h2>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, i) => (
+        <p
+          className="text-center mb-10 max-w-2xl mx-auto text-sm"
+          style={{
+            color: "rgba(180,255,200,.6)",
+          }}
+        >
+
+          Herramientas, configuraciones y automatizaciones desarrolladas
+          durante mi aprendizaje en Linux, pentesting y ciberseguridad.
+
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-6">
+              {projects.map((project, i) => (
             <div
               key={i}
-              className="group card-dark overflow-hidden flex flex-col"
-              style={project.highlight ? {
-                borderColor: "hsl(210, 60%, 28%)",
-                background: "hsl(210, 30%, 10%)",
-              } : {}}
+              className="
+                group
+                relative
+                overflow-hidden
+                rounded-3xl
+                transition-all
+                duration-700
+                hover:-translate-y-3
+                hover:scale-[1.02]
+              "
+              style={{
+                background: "rgba(0,0,0,.35)",
+                backdropFilter: "blur(18px)",
+                border: project.highlight
+                  ? "1px solid rgba(0,255,65,.35)"
+                  : "1px solid rgba(0,255,65,.12)",
+              }}
             >
-              {/* Imagen */}
+
+              <div
+                className="
+                  absolute
+                  inset-0
+                  opacity-0
+                  group-hover:opacity-100
+                  transition-opacity
+                  duration-700
+                "
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(0,255,65,.12), transparent 50%)",
+                }}
+              />
+
+              <div
+                className="
+                  absolute
+                  top-0
+                  left-0
+                  h-[2px]
+                  w-0
+                  group-hover:w-full
+                  transition-all
+                  duration-700
+                "
+                style={{
+                  background:
+                    "linear-gradient(to right, transparent, #00ff41, transparent)",
+                }}
+              />
+
               <div
                 className="relative overflow-hidden"
-                style={{
-                  height: "160px",
-                  background: "hsl(215, 13%, 9%)",
-                }}
+                style={{ height: "240px" }}
               >
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  style={{ opacity: 0.85 }}
+                  className="
+                    w-full
+                    h-full
+                    object-cover
+                    transition-all
+                    duration-1000
+                    group-hover:scale-110
+                  "
                 />
-                {/* Overlay gradiente sutil */}
+
                 <div
                   className="absolute inset-0"
                   style={{
-                    background: "linear-gradient(to top, hsl(210, 30%, 10%) 0%, transparent 60%)",
+                    background:
+                      "linear-gradient(to top, rgba(0,0,0,.95) 5%, transparent 60%)",
                   }}
                 />
+
+                {project.highlight && (
+                  <div
+                    className="
+                      absolute
+                      top-4
+                      right-4
+                      px-3
+                      py-1
+                      rounded-full
+                      text-[10px]
+                      font-mono
+                      animate-pulse
+                    "
+                    style={{
+                      background: "rgba(0,255,65,.12)",
+                      border: "1px solid rgba(0,255,65,.3)",
+                      color: "#00ff41",
+                    }}
+                  >
+                    FEATURED
+                  </div>
+                )}
               </div>
 
-              {/* Content */}
-              <div className="p-5 flex flex-col flex-grow">
+              <div className="relative z-10 p-6 flex flex-col flex-grow">
+
                 <h3
-                  className="font-mono font-semibold text-sm mb-2"
+                  className="
+                    font-mono
+                    font-bold
+                    text-lg
+                    mb-3
+                    transition-all
+                    duration-300
+                    group-hover:translate-x-1
+                  "
                   style={{
-                    color: project.highlight
-                      ? "hsl(210, 100%, 70%)"
-                      : "hsl(210, 20%, 88%)",
+                    color: "#00ff41",
                   }}
                 >
                   {project.title}
                 </h3>
 
                 <p
-                  className="text-xs leading-relaxed mb-4 flex-grow"
-                  style={{ color: "hsl(215, 12%, 55%)" }}
+                  className="text-sm leading-relaxed mb-5 flex-grow"
+                  style={{
+                    color: "rgba(180,255,200,.65)",
+                  }}
                 >
                   {project.description}
                 </p>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {project.tech.map((t) => (
-                    <span key={t} className="badge-tech">{t}</span>
+                <div className="flex flex-wrap gap-2 mb-5">
+
+                  {project.tech.map((tech, idx) => (
+                    <span
+                      key={tech}
+                      className="
+                        px-2.5
+                        py-1.5
+                        rounded-md
+                        font-mono
+                        text-[11px]
+                        transition-all
+                        hover:scale-105
+                      "
+                      style={{
+                        background: "rgba(0,255,65,.06)",
+                        border: "1px solid rgba(0,255,65,.12)",
+                        color: "rgba(180,255,200,.7)",
+                      }}
+                    >
+                      {tech}
+                    </span>
                   ))}
+
                 </div>
 
-                {/* Footer */}
                 <div
-                  className="pt-4 flex items-center justify-between"
-                  style={{ borderTop: "1px solid hsl(215, 12%, 18%)" }}
+                  className="flex items-center justify-between pt-4"
+                  style={{
+                    borderTop: "1px solid rgba(0,255,65,.12)",
+                  }}
                 >
                   <a
-                    href={`https://github.com/espinalclark`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-mono transition-colors"
-                    style={{ color: "hsl(215, 12%, 45%)" }}
-                    onMouseEnter={e => e.currentTarget.style.color = "hsl(210, 20%, 75%)"}
-                    onMouseLeave={e => e.currentTarget.style.color = "hsl(215, 12%, 45%)"}
+                    href="https://github.com/espinalclark"
+                    className="flex items-center gap-2 font-mono text-xs"
+                    style={{ color: "rgba(180,255,200,.6)" }}
                   >
                     <Github size={14} />
                     espinalclark
                   </a>
+
                   <a
                     href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-xs font-mono transition-colors"
-                    style={{ color: "hsl(210, 100%, 60%)" }}
-                    onMouseEnter={e => e.currentTarget.style.color = "hsl(210, 100%, 75%)"}
-                    onMouseLeave={e => e.currentTarget.style.color = "hsl(210, 100%, 60%)"}
+                    className="flex items-center gap-2 font-mono text-xs"
+                    style={{ color: "#00ff41" }}
                   >
-                    ver código
-                    <ExternalLink size={12} />
+                    Ver código
+                    <ExternalLink size={14} />
                   </a>
                 </div>
+
               </div>
+
             </div>
           ))}
+
         </div>
+
+        <div className="mt-10 text-center">
+          <p
+            className="font-mono text-xs"
+            style={{ color: "rgba(180,255,200,.35)" }}
+          >
+            // proyectos personales enfocados en Linux, automatización y ciberseguridad
+          </p>
+        </div>
+
       </div>
     </section>
   )

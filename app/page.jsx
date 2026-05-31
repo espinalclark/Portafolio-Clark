@@ -7,19 +7,23 @@ import Projects from "@/components/Projects"
 import WriteUps from "@/components/WriteUps"
 import Skills from "@/components/Skills"
 import Footer from "@/components/Footer"
+import RainBackground from "@/components/RainBackground"
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
-      <Hero />
-      <About />
-      <Experience />
-      <Certifications />
-      <Projects />
-      <WriteUps />
-      <Skills />
-      <Footer />
+    <main style={{ position: "relative" }}>
+      <RainBackground />
+      <div style={{ position: "relative", zIndex: 1 }}>
+        <Navbar />
+        <Hero />
+        <About />
+        <Experience />
+        <Certifications />
+        <Projects />
+        <WriteUps />
+        <Skills />
+        <Footer />
+      </div>
     </main>
   )
 }

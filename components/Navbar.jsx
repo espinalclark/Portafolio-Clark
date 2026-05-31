@@ -3,20 +3,20 @@ import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 
 const navLinks = [
-  { label: "sobre mí",       href: "#sobre-mi" },
-  { label: "experiencia",    href: "#experiencia" },
-  { label: "proyectos",      href: "#proyectos" },
-  { label: "write-ups",      href: "#writeups" },
-  { label: "skills",         href: "#habilidades" },
-  { label: "certs",          href: "#certificaciones" },
+  { label: "sobre mi",    href: "#sobre-mi" },
+  { label: "experiencia", href: "#experiencia" },
+  { label: "proyectos",   href: "#proyectos" },
+  { label: "write-ups",   href: "#writeups" },
+  { label: "certs",       href: "#certificaciones" },
+  { label: "skills",      href: "#habilidades" },
 ]
 
 export default function Navbar() {
-  const [visible, setVisible]         = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
-  const [mobileOpen, setMobileOpen]   = useState(false)
+  const [visible, setVisible]             = useState(true)
+  const [lastScrollY, setLastScrollY]     = useState(0)
+  const [mobileOpen, setMobileOpen]       = useState(false)
   const [activeSection, setActiveSection] = useState("")
-  const [scrolled, setScrolled]       = useState(false)
+  const [scrolled, setScrolled]           = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,8 +54,8 @@ export default function Navbar() {
     >
       <nav
         style={{
-          background: scrolled ? "hsla(210, 14%, 7%, 0.92)" : "transparent",
-          borderBottom: scrolled ? "1px solid hsl(215, 12%, 18%)" : "1px solid transparent",
+          background: scrolled ? "rgba(3,5,3,0.95)" : "transparent",
+          borderBottom: scrolled ? "1px solid rgba(0,255,65,0.15)" : "1px solid transparent",
           backdropFilter: scrolled ? "blur(12px)" : "none",
           transition: "background 0.3s ease, border-color 0.3s ease",
           padding: "1rem 1.5rem",
@@ -66,11 +66,10 @@ export default function Navbar() {
       >
         <a
           href="#"
-          className="font-mono font-semibold text-sm"
-          style={{ color: "hsl(210, 20%, 90%)", letterSpacing: "0.05em" }}
+          className="font-mono font-bold text-sm"
+          style={{ color: "hsl(120,20%,90%)", letterSpacing: "0.15em" }}
         >
-          clark<span style={{ color: "hsl(210, 100%, 60%)" }}>@sec</span>
-          <span style={{ color: "hsl(210, 100%, 60%)" }} className="cursor-blink" />
+          CLARK ESPINAL
         </a>
 
         <ul className="hidden md:flex items-center gap-8">
@@ -82,18 +81,18 @@ export default function Navbar() {
                   href={link.href}
                   className="font-mono text-xs transition-colors duration-200"
                   style={{
-                    color: isActive ? "hsl(210, 100%, 60%)" : "hsl(215, 12%, 55%)",
+                    color: isActive ? "hsl(120,100%,50%)" : "hsl(120,10%,45%)",
                     letterSpacing: "0.08em",
                   }}
-                  onMouseEnter={e => {
-                    if (!isActive) e.target.style.color = "hsl(210, 20%, 85%)"
+                  onMouseEnter={(e) => {
+                    if (!isActive) e.target.style.color = "hsl(120,60%,70%)"
                   }}
-                  onMouseLeave={e => {
-                    if (!isActive) e.target.style.color = "hsl(215, 12%, 55%)"
+                  onMouseLeave={(e) => {
+                    if (!isActive) e.target.style.color = "hsl(120,10%,45%)"
                   }}
                 >
                   {isActive && (
-                    <span style={{ color: "hsl(210, 100%, 60%)", marginRight: "4px" }}>/</span>
+                    <span style={{ color: "hsl(120,100%,50%)", marginRight: "4px" }}>/</span>
                   )}
                   {link.label}
                 </a>
@@ -106,7 +105,7 @@ export default function Navbar() {
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden"
           aria-label="Toggle menu"
-          style={{ color: "hsl(210, 20%, 75%)" }}
+          style={{ color: "hsl(120,20%,60%)" }}
         >
           {mobileOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -115,12 +114,12 @@ export default function Navbar() {
       {mobileOpen && (
         <div
           style={{
-            background: "hsla(210, 14%, 8%, 0.97)",
-            borderBottom: "1px solid hsl(215, 12%, 18%)",
+            background: "rgba(3,5,3,0.98)",
+            borderBottom: "1px solid rgba(0,255,65,0.15)",
             backdropFilter: "blur(12px)",
           }}
         >
-          <ul className="flex flex-col items-start gap-0 py-2 px-6">
+          <ul className="flex flex-col py-2 px-6">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.slice(1)
               return (
@@ -130,12 +129,12 @@ export default function Navbar() {
                     onClick={() => setMobileOpen(false)}
                     className="font-mono text-sm block py-3"
                     style={{
-                      color: isActive ? "hsl(210, 100%, 60%)" : "hsl(215, 12%, 60%)",
-                      borderBottom: "1px solid hsl(215, 12%, 15%)",
+                      color: isActive ? "hsl(120,100%,50%)" : "hsl(120,10%,50%)",
+                      borderBottom: "1px solid rgba(0,255,65,0.08)",
                     }}
                   >
-                    <span style={{ color: "hsl(210, 100%, 60%)", marginRight: "8px" }}>
-                      {isActive ? "▶" : "//"}
+                    <span style={{ color: "hsl(120,100%,50%)", marginRight: "8px" }}>
+                      {isActive ? ">" : "//"}
                     </span>
                     {link.label}
                   </a>
