@@ -43,7 +43,7 @@ const writeups = [
     icon: icons.Relevant,
     techniques: ["SMB enum", "File upload", "PrintSpoofer", "privesc Windows"],
     description: "Acceso via SMB + shell ASPX subida. Escalada con PrintSpoofer a SYSTEM.",
-    repo: "https://github.com/espinalclark/ee/tree/main/THM/Medium/Revelant",
+    repo: "https://github.com/espinalclark/Pentesting/tree/main/THM/Medium/Revelant",
     highlight: true,
   },
   {
@@ -53,7 +53,7 @@ const writeups = [
     icon: icons.Wonderland,
     techniques: ["SSH", "Python hijacking", "sudo abuse", "privesc Linux"],
     description: "Doble escalada de privilegios mediante PATH hijacking y abuso de sudo.",
-    repo: "https://github.com/espinalclark/ee/tree/main/THM/Medium/Wonderland",
+    repo: "https://github.com/espinalclark/Pentesting/tree/main/THM/Medium/Wonderland",
     highlight: true,
   },
   {
@@ -63,7 +63,7 @@ const writeups = [
     icon: icons.Blue,
     techniques: ["MS17-010", "EternalBlue", "Metasploit", "hashdump"],
     description: "Explotacion EternalBlue sobre SMB y volcado de hashes.",
-    repo: "https://github.com/espinalclark/ee/tree/main/THM/Easy/Blue",
+    repo: "https://github.com/espinalclark/Pentesting/tree/main/THM/Easy/Blue",
     highlight: false,
   },
   {
@@ -73,7 +73,7 @@ const writeups = [
     icon: icons.Ice,
     techniques: ["Icecast exploit", "Kiwi", "MS17-010", "privesc suggester"],
     description: "Explotacion de Icecast media server con obtencion de credenciales.",
-    repo: "https://github.com/espinalclark/ee/tree/main/THM/Easy/Ice",
+    repo: "https://github.com/espinalclark/Pentesting/tree/main/THM/Easy/Ice",
     highlight: false,
   },
   {
@@ -83,7 +83,7 @@ const writeups = [
     icon: icons.Ignite,
     techniques: ["Fuel CMS RCE", "web enum", "reverse shell", "privesc"],
     description: "RCE en Fuel CMS y enumeracion completa del sistema.",
-    repo: "https://github.com/espinalclark/ee/tree/main/THM/Easy/Ignite",
+    repo: "https://github.com/espinalclark/Pentesting/tree/main/THM/Easy/Ignite",
     highlight: false,
   },
 ]
@@ -131,7 +131,7 @@ export default function WriteUps() {
               icon: icons.Kenobi,
               techniques: ["SMB enum", "NFS mount", "FTP exploit", "SUID abuse"],
               description: "SMB, NFS y FTP encadenados para obtener acceso root.",
-              repo: "https://github.com/espinalclark/ee/tree/main/THM/Easy/Kenobi",
+              repo: "https://github.com/espinalclark/Pentesting/tree/main/THM/Easy/Kenobi",
               highlight: false,
             },
             {
@@ -141,7 +141,7 @@ export default function WriteUps() {
               icon: icons.RootMe,
               techniques: ["File upload bypass", "PHP shell", "SUID python", "privesc"],
               description: "Bypass de subida de archivos y abuso de binarios SUID.",
-              repo: "https://github.com/espinalclark/ee/tree/main/THM/Easy/Rootme",
+              repo: "https://github.com/espinalclark/Pentesting/tree/main/THM/Easy/Rootme",
               highlight: false,
             },
             {
@@ -151,7 +151,7 @@ export default function WriteUps() {
               icon: icons.Brute,
               techniques: ["Gobuster", "Hydra", "SSH key crack", "sudo abuse"],
               description: "Fuerza bruta, cracking de claves SSH y escalada por sudo.",
-              repo: "https://github.com/espinalclark/ee/tree/main/THM/Easy/Brute-It",
+              repo: "https://github.com/espinalclark/Pentesting/tree/main/THM/Easy/Brute-It",
               highlight: false,
             },
             {
@@ -161,7 +161,7 @@ export default function WriteUps() {
               icon: icons.Bounty,
               techniques: ["FTP anon", "Hydra SSH", "tar sudo", "privesc"],
               description: "Enumeracion FTP y escalada mediante sudo tar.",
-              repo: "https://github.com/espinalclark/ee/tree/main/THM/Easy/Bounty-Hacker",
+              repo: "https://github.com/espinalclark/Pentesting/tree/main/THM/Easy/Bounty-Hacker",
               highlight: false,
             },
             {
@@ -171,7 +171,7 @@ export default function WriteUps() {
               icon: icons.Simple,
               techniques: ["CMS exploit", "Hydra", "SSH", "sudo vim"],
               description: "CMS vulnerable, SSH y privilegios mediante vim.",
-              repo: "https://github.com/espinalclark/ee/tree/main/THM/Easy/Simple-CTF",
+              repo: "https://github.com/espinalclark/Pentesting/tree/main/THM/Easy/Simple-CTF",
               highlight: false,
             },
           ]).map((w, index) => {

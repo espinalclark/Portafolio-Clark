@@ -84,7 +84,7 @@ export default function Footer() {
             color: "hsl(215,12%,35%)",
           }}
         >
-          © 2026 · Built with Next.js · Linux · Coffee ☕
+          © 2026 · Linux · Pentesting · Coffee · Labs
         </p>
           </div>
 

@@ -47,29 +47,27 @@ export default function Projects() {
         <h2
           className="font-mono font-bold text-center mb-3"
           style={{
-            color: "#00ff41",
+            color: "#e5e7eb",
             fontSize: "clamp(1.8rem,4.5vw,2.8rem)",
           }}
         >
-          Código Propio
+          Mis proyectos
         </h2>
 
         <p
           className="text-center mb-10 max-w-2xl mx-auto text-sm"
           style={{
-            color: "rgba(180,255,200,.6)",
+            color: "rgba(229,231,235,.7)",
           }}
         >
-
-          Herramientas, configuraciones y automatizaciones desarrolladas
+              Herramientas, configuraciones y automatizaciones desarrolladas
           durante mi aprendizaje en Linux, pentesting y ciberseguridad.
-
         </p>
 
         <div className="grid md:grid-cols-2 gap-6">
-              {projects.map((project, i) => (
+          {projects.map((project) => (
             <div
-              key={i}
+              key={project.title}
               className="
                 group
                 relative
@@ -192,7 +190,7 @@ export default function Projects() {
                 <p
                   className="text-sm leading-relaxed mb-5 flex-grow"
                   style={{
-                    color: "rgba(180,255,200,.65)",
+                    color: "rgba(229,231,235,.7)",
                   }}
                 >
                   {project.description}
@@ -200,7 +198,7 @@ export default function Projects() {
 
                 <div className="flex flex-wrap gap-2 mb-5">
 
-                  {project.tech.map((tech, idx) => (
+                  {project.tech.map((tech) => (
                     <span
                       key={tech}
                       className="
@@ -215,7 +213,7 @@ export default function Projects() {
                       style={{
                         background: "rgba(0,255,65,.06)",
                         border: "1px solid rgba(0,255,65,.12)",
-                        color: "rgba(180,255,200,.7)",
+                        color: "rgba(229,231,235,.7)",
                       }}
                     >
                       {tech}
@@ -233,7 +231,7 @@ export default function Projects() {
                   <a
                     href="https://github.com/espinalclark"
                     className="flex items-center gap-2 font-mono text-xs"
-                    style={{ color: "rgba(180,255,200,.6)" }}
+                    style={{ color: "rgba(229,231,235,.65)" }}
                   >
                     <Github size={14} />
                     espinalclark
@@ -250,18 +248,16 @@ export default function Projects() {
                 </div>
 
               </div>
-
             </div>
           ))}
-
         </div>
 
         <div className="mt-10 text-center">
           <p
             className="font-mono text-xs"
-            style={{ color: "rgba(180,255,200,.35)" }}
+            style={{ color: "rgba(229,231,235,.45)" }}
           >
-            // proyectos personales enfocados en Linux, automatización y ciberseguridad
+
           </p>
         </div>
 

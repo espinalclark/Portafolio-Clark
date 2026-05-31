@@ -1,4 +1,4 @@
- "use client"
+"use client"
 
 import { ExternalLink } from "lucide-react"
 
@@ -40,7 +40,7 @@ const certs = [
     short: "HE",
     issuer: "Cisco Networking Academy",
     date: "Mar 2025",
-    url: "https://certs.ine.com/97f82cd1-bb44-4547-8326-b389abbdd680",
+    url: "https://certs.ine.com/97f82cd1-bb44-4547-8326-b389abbdd680?username=clarkespinal950498",
     logo: "hacker",
     tags: ["Reconocimiento", "Explotación", "Seguridad"],
   },
@@ -49,7 +49,7 @@ const certs = [
     short: "NE",
     issuer: "Cisco Networking Academy",
     date: "Jul 2024",
-    url: "https://certs.ine.com/a15fe91b-0d43-4a4d-8992-1f92040a5fea",
+    url: "https://certs.ine.com/a15fe91b-0d43-4a4d-8992-1f92040a5fea?username=clarkespinal950498",
     logo: "cisco",
     tags: ["TCP/IP", "Redes", "Protocolos"],
   },
@@ -58,12 +58,11 @@ const certs = [
     short: "PY",
     issuer: "Cisco Networking Academy",
     date: "Jul 2024",
-    url: "https://certs.ine.com/66918772-5678-4786-a084-389e2f6fcd34",
+    url: "https://certs.ine.com/66918772-5678-4786-a084-389e2f6fcd34?username=clarkespinal950498",
     logo: "cisco",
     tags: ["Python", "Scripting", "Automatización"],
   },
 ]
-
 function CertLogo({ type }) {
   if (type === "ejpt") {
     return (
@@ -118,21 +117,24 @@ export default function Certifications() {
 
         <h2
           className="font-mono font-bold text-center mb-3"
-          style={{ color: "#00ff41", fontSize: "clamp(2rem,4vw,2.6rem)" }}
+          style={{
+            color: "#e5e7eb",
+            fontSize: "clamp(2rem,4vw,2.6rem)",
+          }}
         >
           Credenciales
         </h2>
 
         <p
           className="text-center mb-10 text-sm"
-          style={{ color: "rgba(180,255,200,.6)" }}
+          style={{ color: "rgba(229,231,235,.75)" }}
         >
           Certificaciones verificables en pentesting, cloud y redes.
         </p>
 
         <div className="grid gap-5">
 
-          {certs.map((cert, i) => (
+          {certs.map((cert) => (
             <a
               key={cert.short}
               href={cert.url}
@@ -155,7 +157,6 @@ export default function Certifications() {
                   : "1px solid rgba(0,255,65,.12)",
               }}
             >
-
               <div
                 className="
                   absolute inset-0 opacity-0 group-hover:opacity-100
@@ -180,7 +181,7 @@ export default function Certifications() {
                     <h3
                       className="font-mono font-bold text-base mb-1 group-hover:translate-x-1 transition-all"
                       style={{
-                        color: cert.featured ? "#00ff41" : "hsl(120,50%,88%)",
+                        color: "#f3f4f6",
                       }}
                     >
                       {cert.title}
@@ -188,7 +189,7 @@ export default function Certifications() {
 
                     <p
                       className="text-xs mb-3"
-                      style={{ color: "rgba(180,255,200,.6)" }}
+                      style={{ color: "rgba(229,231,235,.65)" }}
                     >
                       {cert.issuer} • {cert.date}
                     </p>
@@ -205,7 +206,7 @@ export default function Certifications() {
                           style={{
                             background: "rgba(0,255,65,.06)",
                             border: "1px solid rgba(0,255,65,.12)",
-                            color: "rgba(180,255,200,.7)",
+                            color: "rgba(229,231,235,.7)",
                           }}
                         >
                           {tag}
@@ -217,17 +218,20 @@ export default function Certifications() {
                   </div>
                 </div>
 
-                <ExternalLink size={16} color="#00ff41" />
+                <ExternalLink size={16} color="#e5e7eb" />
 
               </div>
-
             </a>
           ))}
         </div>
 
         <div className="mt-10 text-center">
-          <p className="font-mono text-xs" style={{ color: "rgba(180,255,200,.35)" }}>
-            // todas las credenciales son verificables mediante enlace oficial
+          <p
+            className="font-mono text-xs"
+            style={{ color: "rgba(229,231,235,.45)" }}
+          >
+             // todas las credenciales son verificables mediante enlace oficial
+          
           </p>
         </div>
 

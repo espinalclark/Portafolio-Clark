@@ -2,10 +2,10 @@
 
 const bullets = [
   "Desarrollo y mantenimiento de funcionalidades backend a nivel junior.",
-  "Soporte en aplicaciones web y corrección de errores detectados.",
-  "Consumo y pruebas de APIs dentro de aplicaciones web.",
-  "Revisiones de seguridad en aplicaciones web.",
-  "Identificación de vulnerabilidad Clickjacking por ausencia de cabeceras HTTP.",
+  "Soporte y análisis de aplicaciones web, incluyendo corrección de errores.",
+  "Pruebas de APIs desde una perspectiva funcional y de seguridad.",
+  "Evaluaciones básicas de seguridad en aplicaciones web.",
+  "Detección de vulnerabilidades de Clickjacking por ausencia de cabeceras HTTP de protección.",
 ]
 
 function ExperienceCard({ children }) {
@@ -22,8 +22,8 @@ function ExperienceCard({ children }) {
         hover:scale-[1.01]
       "
       style={{
-        background: "rgba(0,0,0,.35)",
-        border: "1px solid rgba(0,255,65,.12)",
+        background: "rgba(15,23,42,.65)",
+        border: "1px solid rgba(148,163,184,.12)",
         backdropFilter: "blur(16px)",
         boxShadow: "0 10px 50px rgba(0,0,0,.35)",
       }}
@@ -32,7 +32,7 @@ function ExperienceCard({ children }) {
         className="absolute inset-0 opacity-100"
         style={{
           background:
-            "linear-gradient(135deg, rgba(0,255,65,.08), transparent 45%)",
+            "linear-gradient(135deg, rgba(34,197,94,.06), transparent 45%)",
         }}
       />
 
@@ -40,7 +40,6 @@ function ExperienceCard({ children }) {
     </div>
   )
 }
-
 export default function Experience() {
   return (
     <section
@@ -53,8 +52,10 @@ export default function Experience() {
           // experiencia
         </p>
 
-        <h2 className="font-mono font-bold text-center mb-10"
-            style={{ color: "#00ff41" }}>
+        <h2
+          className="font-mono font-bold text-center mb-10"
+          style={{ color: "#f1f5f9" }}
+        >
           Experiencia Profesional
         </h2>
 
@@ -68,12 +69,12 @@ export default function Experience() {
 
                 <div
                   className="w-2.5 h-2.5 rounded-full animate-pulse"
-                  style={{ background: "#00ff41" }}
+                  style={{ background: "#22c55e" }}
                 />
 
                 <span
                   className="font-mono text-xs uppercase tracking-widest"
-                  style={{ color: "#00ff41" }}
+                  style={{ color: "#cbd5e1" }}
                 >
                   Backend Development
                 </span>
@@ -82,14 +83,14 @@ export default function Experience() {
 
               <h3
                 className="font-mono font-bold text-lg mb-1"
-                style={{ color: "hsl(120,50%,88%)" }}
+                style={{ color: "#f1f5f9" }}
               >
                 Programador Backend Jr
               </h3>
 
               <p
                 className="font-mono text-sm"
-                style={{ color: "rgba(0,255,65,.75)" }}
+                style={{ color: "#94a3b8" }}
               >
                 VafTec Perú
               </p>
@@ -101,9 +102,9 @@ export default function Experience() {
               <span
                 className="px-3 py-1.5 rounded-xl font-mono text-xs"
                 style={{
-                  background: "rgba(0,255,65,.08)",
-                  border: "1px solid rgba(0,255,65,.2)",
-                  color: "#00ff41",
+                  background: "rgba(34,197,94,.08)",
+                  border: "1px solid rgba(34,197,94,.2)",
+                  color: "#22c55e",
                 }}
               >
                 Sep 2025 — Dic 2025
@@ -111,7 +112,7 @@ export default function Experience() {
 
               <span
                 className="font-mono text-xs"
-                style={{ color: "rgba(180,255,200,.5)" }}
+                style={{ color: "#64748b" }}
               >
                 Remoto · 4 meses
               </span>
@@ -125,7 +126,7 @@ export default function Experience() {
             style={{
               height: "1px",
               background:
-                "linear-gradient(to right, rgba(0,255,65,.25), transparent)",
+                "linear-gradient(to right, rgba(34,197,94,.25), transparent)",
             }}
           />
 
@@ -164,8 +165,8 @@ export default function Experience() {
                   style={{
                     background:
                       i === bullets.length - 1
-                        ? "#00ff41"
-                        : "rgba(0,255,65,.6)",
+                        ? "#22c55e"
+                        : "rgba(34,197,94,.6)",
                   }}
                 />
 
@@ -174,8 +175,8 @@ export default function Experience() {
                   style={{
                     color:
                       i === bullets.length - 1
-                        ? "rgba(180,255,200,.9)"
-                        : "rgba(180,255,200,.65)",
+                        ? "#e2e8f0"
+                        : "#94a3b8",
                   }}
                 >
                   {item}
@@ -196,21 +197,21 @@ export default function Experience() {
               hover:scale-[1.02]
             "
             style={{
-              background: "rgba(0,255,65,.08)",
-              border: "1px solid rgba(0,255,65,.2)",
+              background: "rgba(34,197,94,.08)",
+              border: "1px solid rgba(34,197,94,.2)",
             }}
           >
 
             <p
               className="font-mono text-xs mb-2"
-              style={{ color: "#00ff41" }}
+              style={{ color: "#22c55e" }}
             >
               Vulnerabilidad Identificada
             </p>
 
             <p
               className="font-mono text-sm"
-              style={{ color: "rgba(180,255,200,.85)" }}
+              style={{ color: "#cbd5e1" }}
             >
               Clickjacking · Missing X-Frame-Options / CSP Headers
             </p>

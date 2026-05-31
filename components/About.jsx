@@ -35,8 +35,8 @@ function AboutCard({ icon: Icon, title, desc }) {
         hover:scale-[1.03]
       "
       style={{
-        background: "rgba(0,0,0,.35)",
-        border: "1px solid rgba(0,255,65,.12)",
+        background: "rgba(15,23,42,.65)",
+        border: "1px solid rgba(148,163,184,.12)",
         backdropFilter: "blur(10px)",
       }}
     >
@@ -53,7 +53,7 @@ function AboutCard({ icon: Icon, title, desc }) {
         "
         style={{
           background:
-            "linear-gradient(90deg, transparent, #00ff41, transparent)",
+            "linear-gradient(90deg, transparent, #22c55e, transparent)",
         }}
       />
 
@@ -68,7 +68,7 @@ function AboutCard({ icon: Icon, title, desc }) {
         "
         style={{
           background:
-            "radial-gradient(circle at center, rgba(0,255,65,.08), transparent 70%)",
+            "radial-gradient(circle at center, rgba(34,197,94,.08), transparent 70%)",
         }}
       />
 
@@ -89,24 +89,24 @@ function AboutCard({ icon: Icon, title, desc }) {
             animate-pulse
           "
           style={{
-            background: "rgba(0,255,65,.08)",
-            border: "1px solid rgba(0,255,65,.18)",
-            boxShadow: "0 0 15px rgba(0,255,65,.12)",
+            background: "rgba(34,197,94,.08)",
+            border: "1px solid rgba(34,197,94,.18)",
+            boxShadow: "0 0 15px rgba(34,197,94,.12)",
           }}
         >
-          <Icon size={18} style={{ color: "#00ff41" }} />
+          <Icon size={18} style={{ color: "#22c55e" }} />
         </div>
 
         <h3
           className="font-mono font-semibold text-base mb-2"
-          style={{ color: "hsl(120,50%,88%)" }}
+          style={{ color: "#f1f5f9" }}
         >
           {title}
         </h3>
 
         <p
           className="text-sm leading-relaxed"
-          style={{ color: "rgba(180,255,200,.65)" }}
+          style={{ color: "#94a3b8" }}
         >
           {desc}
         </p>
@@ -123,21 +123,21 @@ export default function About() {
       <div className="max-w-5xl mx-auto">
 
         <p className="section-label mb-4 text-center">
-          // sobre mi
+          // perfil
         </p>
 
         <h2
           className="font-mono font-bold text-center mb-8"
-          style={{ color: "#00ff41" }}
+          style={{ color: "#f1f5f9" }}
         >
-          Un poco de contexto
+          Perfil
         </h2>
 
         <div
           className="relative overflow-hidden rounded-2xl p-6 mb-10"
           style={{
-            background: "rgba(0,0,0,.35)",
-            border: "1px solid rgba(0,255,65,.12)",
+            background: "rgba(15,23,42,.65)",
+            border: "1px solid rgba(148,163,184,.12)",
             backdropFilter: "blur(12px)",
           }}
         >
@@ -145,47 +145,27 @@ export default function About() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(135deg, rgba(0,255,65,.06), transparent 55%)",
+                "linear-gradient(135deg, rgba(34,197,94,.05), transparent 55%)",
             }}
           />
 
           <div className="relative z-10">
             <p
               className="text-base leading-relaxed mb-5"
-              style={{ color: "rgba(180,255,200,.72)" }}
+              style={{ color: "#cbd5e1" }}
             >
-              Soy Clark, estudiante de Ingeniería en Ciberseguridad en Perú.
-              Poseo la certificación
-
-              <span
-                className="
-                  mx-2
-                  px-2
-                  py-1
-                  rounded-md
-                  font-mono
-                  text-xs
-                "
-                style={{
-                  background: "rgba(0,255,65,.08)",
-                  color: "#00ff41",
-                  border: "1px solid rgba(0,255,65,.18)",
-                }}
-              >
-                eJPT
-              </span>
-
-              y me especializo en seguridad ofensiva, laboratorios prácticos y
-              resolución de máquinas enfocadas en pentesting.
+              Soy Clark, estudiante de Ingeniería de Ciberseguridad en SENATI.
+              Cuento con la certificación eJPT y trabajo principalmente en
+              seguridad ofensiva, practicando en laboratorios y máquinas de pentesting.
             </p>
 
             <p
               className="text-base leading-relaxed"
-              style={{ color: "rgba(180,255,200,.72)" }}
+              style={{ color: "#94a3b8" }}
             >
-              También cuento con experiencia en desarrollo backend, lo que me
-              permite comprender mejor cómo están construidas las aplicaciones
-              antes de analizarlas desde una perspectiva de seguridad.
+              También tengo experiencia en desarrollo backend, lo que me permite
+              entender mejor la lógica de las aplicaciones antes de analizarlas
+              desde el enfoque de seguridad.
             </p>
           </div>
         </div>
@@ -203,9 +183,9 @@ export default function About() {
 
         <div
           className="mt-8 text-center font-mono text-xs"
-          style={{ color: "rgba(0,255,65,.45)" }}
+          style={{ color: "#64748b" }}
         >
-          <span className="animate-pulse" style={{ color: "#00ff41" }}>
+          <span className="animate-pulse" style={{ color: "#22c55e" }}>
             ●
           </span>{" "}
           Pentesting · Active Directory · Red Team
