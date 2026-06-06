@@ -4,13 +4,31 @@ import { Github, ExternalLink } from "lucide-react"
 
 const projects = [
   {
+    image: "/assets/icons/ad.png",
+    title: "ad-attack-lab",
+    tech: ["Active Directory", "PowerShell", "Python", "Kerberos", "ADCS", "Ligolo-ng"],
+    description:
+      "Cadena de ataque completa sobre Active Directory: LLMNR poisoning, AS-REP roasting, Kerberoasting, pivoting con Ligolo-ng, ACL abuse, ADCS ESC1 y compromiso de dominio vía DCSync.",
+    github: "https://github.com/espinalclark/Projects/tree/main/ad-attack-lab",
+    highlight: true,
+  },
+  {
+    image: "/assets/icons/aws.png",
+    title: "aws-misconfig-lab",
+    tech: ["AWS", "Terraform", "Python", "IAM", "SSRF", "Lambda"],
+    description:
+      "Cadena de ataque completa en AWS: S3 enumeration, IAM privesc, SSRF → IMDSv1 credential theft, Lambda RCE, ECR hardcoded secrets y persistencia vía backdoor IAM user.",
+    github: "https://github.com/espinalclark/Projects/tree/main/aws-misconfig-lab",
+    highlight: true,
+  },
+  {
     image: "/assets/images/hyprland.jpeg",
     title: "Arch Linux + Hyprland",
     tech: ["Arch Linux", "Hyprland", "Waybar", "Bash"],
     description:
       "Entorno Linux minimalista optimizado para prácticas CTF y pentesting. Configuración completa desde cero.",
     github: "https://github.com/espinalclark/Hyprland-kali",
-    highlight: true,
+    highlight: false,
   },
   {
     image: "/assets/images/multi.jpeg",
