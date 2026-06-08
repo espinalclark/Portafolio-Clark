@@ -1,6 +1,6 @@
 "use client"
 
-import { Github, ExternalLink } from "lucide-react"
+import { Github, ExternalLink, FileText } from "lucide-react"
 
 const projects = [
   {
@@ -10,6 +10,7 @@ const projects = [
     description:
       "Cadena de ataque completa sobre Active Directory: LLMNR poisoning, AS-REP roasting, Kerberoasting, pivoting con Ligolo-ng, ACL abuse, ADCS ESC1 y compromiso de dominio vía DCSync.",
     github: "https://github.com/espinalclark/Projects/tree/main/ad-attack-lab",
+    report: "https://github.com/espinalclark/Projects/blob/main/ad-attack-lab/report/INFORME.pdf",
     highlight: true,
   },
   {
@@ -19,6 +20,7 @@ const projects = [
     description:
       "Cadena de ataque completa en AWS: S3 enumeration, IAM privesc, SSRF → IMDSv1 credential theft, Lambda RCE, ECR hardcoded secrets y persistencia vía backdoor IAM user.",
     github: "https://github.com/espinalclark/Projects/tree/main/aws-misconfig-lab",
+    report: "https://github.com/espinalclark/Projects/blob/main/aws-misconfig-lab/report/INFORME.pdf",
     highlight: true,
   },
   {
@@ -28,6 +30,7 @@ const projects = [
     description:
       "Entorno Linux minimalista optimizado para prácticas CTF y pentesting. Configuración completa desde cero.",
     github: "https://github.com/espinalclark/Hyprland-kali",
+    report: null,
     highlight: false,
   },
   {
@@ -37,6 +40,7 @@ const projects = [
     description:
       "Script multihilo en Python para descarga masiva de archivos desde URLs directas. Útil para automatización y recolección de recursos.",
     github: "https://github.com/espinalclark/Multi_Thread",
+    report: null,
     highlight: false,
   },
 ]
@@ -47,6 +51,56 @@ export default function Projects() {
       id="proyectos"
       className="relative py-24 px-6 md:px-16 lg:px-24 overflow-hidden"
     >
+      <style>{`
+        @keyframes reportPulse {
+          0%, 100% {
+            box-shadow: 0 0 0 0 rgba(0, 255, 65, 0);
+          }
+          50% {
+            box-shadow: 0 0 8px 2px rgba(0, 255, 65, 0.25);
+          }
+        }
+
+        @keyframes scanline {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(300%); }
+        }
+
+        .report-btn {
+          position: relative;
+          overflow: hidden;
+          animation: reportPulse 2.5s ease-in-out infinite;
+          transition: all 0.3s ease;
+        }
+
+        .report-btn::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 40%;
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 255, 65, 0.35),
+            transparent
+          );
+          animation: scanline 2.2s ease-in-out infinite;
+        }
+
+        .report-btn:hover {
+          background: rgba(0, 255, 65, 0.15) !important;
+          border-color: rgba(0, 255, 65, 0.7) !important;
+          color: #00ff41 !important;
+          transform: translateY(-1px);
+          box-shadow: 0 0 14px rgba(0, 255, 65, 0.3);
+        }
+
+        .report-btn:hover::before {
+          animation-duration: 0.8s;
+        }
+      `}</style>
 
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[650px] h-[650px] rounded-full blur-[160px]"
@@ -78,7 +132,7 @@ export default function Projects() {
             color: "rgba(229,231,235,.7)",
           }}
         >
-              Herramientas, configuraciones y automatizaciones desarrolladas
+          Herramientas, configuraciones y automatizaciones desarrolladas
           durante mi aprendizaje en Linux, pentesting y ciberseguridad.
         </p>
 
@@ -215,7 +269,6 @@ export default function Projects() {
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-5">
-
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
@@ -237,7 +290,6 @@ export default function Projects() {
                       {tech}
                     </span>
                   ))}
-
                 </div>
 
                 <div
@@ -255,14 +307,40 @@ export default function Projects() {
                     espinalclark
                   </a>
 
-                  <a
-                    href={project.github}
-                    className="flex items-center gap-2 font-mono text-xs"
-                    style={{ color: "#00ff41" }}
-                  >
-                    Ver código
-                    <ExternalLink size={14} />
-                  </a>
+                  {/* Botones derecha */}
+                  <div className="flex items-center gap-3">
+
+                    {/* Botón Ver Reporte — solo featured */}
+                    {project.report && (
+                      <a
+                        href={project.report}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="report-btn flex items-center gap-1.5 font-mono text-xs px-2.5 py-1.5 rounded-md"
+                        style={{
+                          background: "rgba(0,255,65,.06)",
+                          border: "1px solid rgba(0,255,65,.3)",
+                          color: "rgba(0,255,65,.85)",
+                        }}
+                      >
+                        <FileText size={12} />
+                        Ver reporte
+                      </a>
+                    )}
+
+                    {/* Botón Ver código */}
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 font-mono text-xs"
+                      style={{ color: "#00ff41" }}
+                    >
+                      Ver código
+                      <ExternalLink size={14} />
+                    </a>
+
+                  </div>
                 </div>
 
               </div>
@@ -275,7 +353,6 @@ export default function Projects() {
             className="font-mono text-xs"
             style={{ color: "rgba(229,231,235,.45)" }}
           >
-
           </p>
         </div>
 
